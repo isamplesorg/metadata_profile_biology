@@ -147,8 +147,8 @@ PREFIX rdfs: <{NS['rdfs']}>
 
         test = self._g.namespace_manager.namespaces()
         for prefix, ns_url in test:
-            print(f"{prefix}: {ns_url}")
-            self._g.bind(prefix, ns_url)
+            L.debug(f"load prefix binding: {prefix}: {ns_url}")
+#            self._g.bind(prefix, ns_url)
 
         if bindings is not None:
             for k, v in bindings.items():
@@ -254,8 +254,10 @@ PREFIX rdfs: <{NS['rdfs']}>
     def namespaces(self) -> list[str, rdflib.URIRef]:
         return [n for n in self._g.namespace_manager.namespaces()]
 
-    def bind(self, prefix: str, uri: str, override: bool = True):
-        self._g.namespace_manager.bind(prefix, uri, override=override)
+#    def bind(self, prefix: str, uri: str, override: bool = True):
+#        self._g.namespace_manager.bind(prefix, uri, override=override)
+    def bind(self, prefix: str, uri: str, replace: bool = True):
+        self._g.namespace_manager.bind(prefix, uri, replace=replace)
 
     def query(self, q, **bindings):
         sparql = rdflib.plugins.sparql.prepareQuery(
@@ -555,6 +557,6 @@ PREFIX rdfs: <{NS['rdfs']}>
             }
         }
         qres = self.query("SELECT ?o WHERE {?subject ?predicate ?o.}", subject=_name, predicate="skos:definition")
-        L.debug(qres)
+        L.debug(f"Dict representation of self: %", qres)
         res[_name]["description"] = self._one_res(qres)
         return res

@@ -117,8 +117,6 @@ def load(ctx, inputf, voc_uri):
 #        uris = CURRENT_ISAMPLES_VOCABULARIES
 #    for aninputf in uris:
     L.info("Loading URI: %s", inputf)
-    # stifle cascade of warnings from sqlalchemy about 
-    # 'caught a TypeError, retrying call to <class 'rdflib_sqlalchemy.store.SQLAlchemy'>.bind without override'
     _s.load(inputf,voc_uri)
     L.info("Graph now has %s statements.", len(_s._g))
 
