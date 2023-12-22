@@ -146,8 +146,8 @@ PREFIX rdfs: <{NS['rdfs']}>
         L.info("Navocab.load.source: %s", source)
 
         test = self._g.namespace_manager.namespaces
-        if test is not None:
-            L.debug("_g namespaces: %s", test)
+        for ns in test:
+            L.debug("_g namespaces: %s", ns)
 
         if bindings is not None:
             for k, v in bindings.items():
