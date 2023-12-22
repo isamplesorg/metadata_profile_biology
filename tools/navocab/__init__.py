@@ -147,7 +147,7 @@ PREFIX rdfs: <{NS['rdfs']}>
 
         test = self._g.namespace_manager.namespaces()
         for prefix, ns_url in test:
-            print(f"{prefix}: {ns_url}")
+            L.debug(f"load prefix binding: {prefix}: {ns_url}")
             self._g.bind(prefix, ns_url)
 
         if bindings is not None:
@@ -160,16 +160,9 @@ PREFIX rdfs: <{NS['rdfs']}>
         # if not present, then compute and add it for later use.
         # What vocabulary did we just load?
         
-#        q = (
- #           VocabularyStore._PFX
-#            + """SELECT ?s
-#        WHERE {
-#            ?s rdf:type skos:ConceptScheme .
-#        }"""
- #       )
-        # this query will return multiple values if more than one vocab has been loaded
-#        qres = g_loaded.query(q)
-        loaded_vocabulary = voc_uri
+        loaded_vocabulary = self._g.namespace_manager.expand_curie(voc_uri)
+        L.debug(f"Test Loaded_vocabulary: {loaded_vocabulary}")
+
         if loaded_vocabulary is not None:
             L.info("Loaded vocabulary %s", loaded_vocabulary)
             q = (
@@ -213,6 +206,7 @@ PREFIX rdfs: <{NS['rdfs']}>
 
 
     def expand_name(self, n: typing.Optional[str]) -> typing.Optional[str]:
+        L.debug(f"expand name: {n}")
         if n is None:
             return n
         try:
@@ -222,6 +216,7 @@ PREFIX rdfs: <{NS['rdfs']}>
         return n
 
     def compact_name(self, n:typing.Optional[str]) -> typing.Optional[str]:
+        L.debug(f"compact name: {n}")
         if n is None:
             return n
         try:
@@ -254,8 +249,10 @@ PREFIX rdfs: <{NS['rdfs']}>
     def namespaces(self) -> list[str, rdflib.URIRef]:
         return [n for n in self._g.namespace_manager.namespaces()]
 
-    def bind(self, prefix: str, uri: str, override: bool = True):
-        self._g.namespace_manager.bind(prefix, uri, override=override)
+#    def bind(self, prefix: str, uri: str, override: bool = True):
+#        self._g.namespace_manager.bind(prefix, uri, override=override)
+    def bind(self, prefix: str, uri: str, replace: bool = True):
+        self._g.namespace_manager.bind(prefix, uri, replace=replace)
 
     def query(self, q, **bindings):
         sparql = rdflib.plugins.sparql.prepareQuery(
@@ -555,6 +552,6 @@ PREFIX rdfs: <{NS['rdfs']}>
             }
         }
         qres = self.query("SELECT ?o WHERE {?subject ?predicate ?o.}", subject=_name, predicate="skos:definition")
-        L.debug(qres)
+        L.debug(f"Dict representation of self: %", qres)
         res[_name]["description"] = self._one_res(qres)
         return res

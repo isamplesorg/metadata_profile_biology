@@ -98,6 +98,7 @@ def main(ctx, store, verbosity) -> int:
 
 @main.command("purgeStore")
 @click.pass_context
+# added by smr
 def purgeStore(ctx):
     _s = ctx.obj["store"]
     _s.purge_store()
@@ -117,10 +118,10 @@ def load(ctx, inputf, voc_uri):
 #        uris = CURRENT_ISAMPLES_VOCABULARIES
 #    for aninputf in uris:
     L.info("Loading URI: %s", inputf)
-    # stifle cascade of warnings from sqlalchemy about 
-    # 'caught a TypeError, retrying call to <class 'rdflib_sqlalchemy.store.SQLAlchemy'>.bind without override'
     _s.load(inputf,voc_uri)
     L.info("Graph now has %s statements.", len(_s._g))
+    test = _s._g.namespace_manager.expand_curie(voc_uri)
+    L.debug(f"Loaded_vocabulary, vocab.py: {test}")
 
 
 @main.command("namespaces")

@@ -34,6 +34,8 @@ import logging
 import logging.config
 import navocab  # this is a local python package with routines for
                 # for interacting with skos rdf in an sqlAlchemy database
+# from rdflib import plugins
+
 
 logging_config = {
     "version": 1,
@@ -155,9 +157,9 @@ def getObjects(g, s, p):
     }""")
 
     L.debug(f"getObject prefixes: {PFX}\n")
-    L.debug(f"getObject subject: {s}\n")
-    L.debug(f"getObject predicate: {p}\n")
-
+    L.debug(f"getObject expand subject: {g.expand_curie(s)}\n")
+    L.debug(f"getObject expand predicate: {g.expand_curie(p)}\n")
+    # g.expand_curie(s)
     qres = g.query(q, initBindings={'subject': s, 'predicate': p})
     L.debug(f"length of qres: {len(qres)}\n", )
     L.debug(f"qres: {qres}\n")
@@ -408,6 +410,12 @@ def main(source, vocabulary):
     source = f"sqlite:///{source}"
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
+
+    L.debug(f"vocab2md source: {source}")
+    L.debug(f"vocab2md vocabulary: {vocabulary}")
+
+    test = store._g.namespace_manager.expand_curie(vocabulary)
+    L.debug(f"Test: {test}")
 
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call describeVocabulary for: {vocabulary}")

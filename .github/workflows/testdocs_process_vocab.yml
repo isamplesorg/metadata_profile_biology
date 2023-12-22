@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Vocabulary action
-        uses: isamplesorg/vocabularyTest@main
+        uses: isamplesorg/metadata_profile_biology@main
         # input variables 'action' and 'path' are defined in action.yml, and assigned values here
         # GitHub creates an environment variable for the input with the name INPUT_<VARIABLE_NAME>
         with:
@@ -39,9 +39,9 @@ jobs:
           path: ${{ github.workspace }}
           # provide ttl file names without extensions; the base file name will be 
           #    used for output files with the appropriate extension.
-          inputttl: test_sample_type|test_feature_type
+          inputttl: biology_sampledfeature_extension
           # these are the URIs for the ConceptScheme; there must be a conceptScheme defined in each vocabulary.
-          inputvocaburi: spec:testvocabulary|sf:testfeaturevocabulary
+          inputvocaburi: bioe:biologicentityvocabulary
 
       - name: Deploy docs
         uses: JamesIves/github-pages-deploy-action@v4
@@ -50,7 +50,7 @@ jobs:
           folder: docs # The folder the action should deploy.
           target-folder: testoutput  #push the contents of the deployment folder into a
                                  # specific directory on the deployment branch
-          commit-message: "new build of vocabulary display files"
+          commit-message: "new build of vocabulary display files to testoutput"
 
       - name: Deploy vocabulary database
         uses: JamesIves/github-pages-deploy-action@v4
@@ -59,4 +59,4 @@ jobs:
           folder: cache # The folder the action should deploy.
           target-folder: testoutput/cache  #push the contents of the deployment folder into a
                                  # specific directory on the deployment branch
-          commit-message: "new build of vocabularies.db"
+          commit-message: "new build of vocabularies.db to testoutput"
