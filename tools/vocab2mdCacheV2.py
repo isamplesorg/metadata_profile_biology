@@ -153,9 +153,11 @@ def getObjects(g, s, p):
     WHERE {
         ?subject ?predicate ?o .
     }""")
+
     L.debug(f"getObject prefixes: {PFX}\n")
     L.debug(f"getObject subject: {s}\n")
     L.debug(f"getObject predicate: {p}\n")
+
     qres = g.query(q, initBindings={'subject': s, 'predicate': p})
     L.debug(f"length of qres: {len(qres)}\n", )
     L.debug(f"qres: {qres}\n")
@@ -408,7 +410,7 @@ def main(source, vocabulary):
     res = []
 
     vocabulary = store.expand_name(vocabulary)
-    L.debug(f"main: call desribeVocabulary for: {vocabulary}")
+    L.debug(f"main: call describeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)
     res.append(theMarkdown)
     # send the result to stdout via print.
