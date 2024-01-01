@@ -206,6 +206,7 @@ PREFIX rdfs: <{NS['rdfs']}>
 
 
     def expand_name(self, n: typing.Optional[str]) -> typing.Optional[str]:
+        L.debug(f"expand name: {n}")
         if n is None:
             return n
         try:
@@ -215,6 +216,7 @@ PREFIX rdfs: <{NS['rdfs']}>
         return n
 
     def compact_name(self, n:typing.Optional[str]) -> typing.Optional[str]:
+        L.debug(f"compact name: {n}")
         if n is None:
             return n
         try:
