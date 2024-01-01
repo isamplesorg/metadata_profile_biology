@@ -148,7 +148,7 @@ PREFIX rdfs: <{NS['rdfs']}>
         test = self._g.namespace_manager.namespaces()
         for prefix, ns_url in test:
             L.debug(f"load prefix binding: {prefix}: {ns_url}")
-#            self._g.bind(prefix, ns_url)
+            self._g.bind(prefix, ns_url)
 
         if bindings is not None:
             for k, v in bindings.items():
