@@ -1,1 +1,0 @@
-# this is an sQLalchemy database that gets loaded with the vocabulary triples
