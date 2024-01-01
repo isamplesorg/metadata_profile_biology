@@ -139,7 +139,8 @@ def _run_uijson_in_container(output_path: str, vocab_location: str):
 
 def _run_docs_in_container(output_path: str, vocab_location: str):
     with open(output_path, "w") as f:
-        docs_args = ["/app/cache/vocabularies.db", vocab_location]
+#        docs_args = ["/app/cache/vocabularies.db", vocab_location]
+        docs_args = ["cache/vocabularies.db", vocab_location]
         testflag = _run_python_in_container("/app/tools/vocab2mdCacheV2.py", docs_args, f)
         if (testflag == 0):
             print(f"Docs in container: Successfully wrote doc file {vocab_location} to {output_path}")
