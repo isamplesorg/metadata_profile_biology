@@ -411,6 +411,8 @@ def main(source, vocabulary):
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
 
+    L.debug(f"store namespaces: {store.namespaces()}")
+
     vocabulary = store.expand_name(vocabulary)
     L.debug(f"main: call describeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)

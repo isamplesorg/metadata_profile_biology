@@ -98,6 +98,7 @@ def main(ctx, store, verbosity) -> int:
 
 @main.command("purgeStore")
 @click.pass_context
+# added by smr
 def purgeStore(ctx):
     _s = ctx.obj["store"]
     _s.purge_store()
