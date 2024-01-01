@@ -120,6 +120,8 @@ def load(ctx, inputf, voc_uri):
     L.info("Loading URI: %s", inputf)
     _s.load(inputf,voc_uri)
     L.info("Graph now has %s statements.", len(_s._g))
+    test = _s._g.namespace_manager.expand_curie(voc_uri)
+    L.debug(f"Loaded_vocabulary, vocab.py: {test}")
 
 
 @main.command("namespaces")

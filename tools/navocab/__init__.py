@@ -161,7 +161,6 @@ PREFIX rdfs: <{NS['rdfs']}>
         # What vocabulary did we just load?
         
         loaded_vocabulary = self._g.namespace_manager.expand_curie(voc_uri)
-        # test = self._g.namespace_manager.expand_curie(loaded_vocabulary)
         L.debug(f"Test Loaded_vocabulary: {loaded_vocabulary}")
 
         if loaded_vocabulary is not None:
