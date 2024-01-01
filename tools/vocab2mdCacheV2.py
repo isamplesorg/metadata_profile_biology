@@ -411,6 +411,9 @@ def main(source, vocabulary):
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
 
+    L.debug(f"vocab2md source: {source}")
+    L.debug(f"vocab2md vocabulary: {vocabulary}")
+
     test = store._g.namespace_manager.expand_curie(vocabulary)
     L.debug(f"Test: {test}")
 
