@@ -44,7 +44,33 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#concept-scheme-conceptscheme" id="toc-concept-scheme-conceptscheme" class="nav-link active" data-scroll-target="#concept-scheme-conceptscheme"><span class="header-section-number">1</span> <strong>Concept scheme:</strong> ConceptScheme</a></li>
+  <li><a href="#concept-scheme-isamples-biological-entity-extension-basic-taxon-classes-for-biological-entity" id="toc-concept-scheme-isamples-biological-entity-extension-basic-taxon-classes-for-biological-entity" class="nav-link active" data-scroll-target="#concept-scheme-isamples-biological-entity-extension-basic-taxon-classes-for-biological-entity"><span class="header-section-number">1</span> <strong>Concept scheme:</strong> iSamples Biological Entity Extension: Basic taxon classes for biological entity</a>
+  <ul>
+  <li><a href="#biological-entity" id="toc-biological-entity" class="nav-link" data-scroll-target="#biological-entity"><span class="header-section-number">1.1</span> Biological entity</a>
+  <ul class="collapse">
+  <li><a href="#eukaryote" id="toc-eukaryote" class="nav-link" data-scroll-target="#eukaryote"><span class="header-section-number">1.1.1</span> Eukaryote</a>
+  <ul class="collapse">
+  <li><a href="#animalia" id="toc-animalia" class="nav-link" data-scroll-target="#animalia"><span class="header-section-number">1.1.1.1</span> Animalia</a></li>
+  <li><a href="#fungi" id="toc-fungi" class="nav-link" data-scroll-target="#fungi"><span class="header-section-number">1.1.1.2</span> Fungi</a></li>
+  <li><a href="#plantae" id="toc-plantae" class="nav-link" data-scroll-target="#plantae"><span class="header-section-number">1.1.1.3</span> Plantae</a></li>
+  <li><a href="#protista" id="toc-protista" class="nav-link" data-scroll-target="#protista"><span class="header-section-number">1.1.1.4</span> Protista</a></li>
+  <li><a href="#algae" id="toc-algae" class="nav-link" data-scroll-target="#algae"><span class="header-section-number">1.1.1.5</span> Algae</a></li>
+  <li><a href="#eukaryotic-microorganisms" id="toc-eukaryotic-microorganisms" class="nav-link" data-scroll-target="#eukaryotic-microorganisms"><span class="header-section-number">1.1.1.6</span> Eukaryotic microorganisms</a></li>
+  </ul></li>
+  <li><a href="#lichen" id="toc-lichen" class="nav-link" data-scroll-target="#lichen"><span class="header-section-number">1.1.2</span> Lichen</a></li>
+  <li><a href="#plasmid" id="toc-plasmid" class="nav-link" data-scroll-target="#plasmid"><span class="header-section-number">1.1.3</span> Plasmid</a></li>
+  <li><a href="#prokaryote" id="toc-prokaryote" class="nav-link" data-scroll-target="#prokaryote"><span class="header-section-number">1.1.4</span> Prokaryote</a>
+  <ul class="collapse">
+  <li><a href="#archaea" id="toc-archaea" class="nav-link" data-scroll-target="#archaea"><span class="header-section-number">1.1.4.1</span> Archaea</a></li>
+  <li><a href="#bacteria" id="toc-bacteria" class="nav-link" data-scroll-target="#bacteria"><span class="header-section-number">1.1.4.2</span> Bacteria</a></li>
+  </ul></li>
+  <li><a href="#virus" id="toc-virus" class="nav-link" data-scroll-target="#virus"><span class="header-section-number">1.1.5</span> Virus</a>
+  <ul class="collapse">
+  <li><a href="#other-virus" id="toc-other-virus" class="nav-link" data-scroll-target="#other-virus"><span class="header-section-number">1.1.5.1</span> Other Virus</a></li>
+  <li><a href="#phage" id="toc-phage" class="nav-link" data-scroll-target="#phage"><span class="header-section-number">1.1.5.2</span> Phage</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -52,14 +78,453 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><span id="ConceptScheme"></span></p>
-<section id="concept-scheme-conceptscheme" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <strong>Concept scheme:</strong> ConceptScheme</h1>
-<p>no modified date</p>
-<p>subtitle:</p>
-<p>Namespace: <a href="bioe:biologicentityvocabulary"><code>bioe:biologicentityvocabulary</code></a></p>
+<p><span id="iSamplesBiologicalEntityExtension:Basictaxonclassesforbiologicalentity"></span></p>
+<section id="concept-scheme-isamples-biological-entity-extension-basic-taxon-classes-for-biological-entity" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Concept scheme:</strong> iSamples Biological Entity Extension: Basic taxon classes for biological entity</h1>
+<p>Vocabulary last modified: 2023-03-23</p>
+<p>subtitle: This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker’s five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonaomy and cladistist for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocablaries should be used for other taxonomic schemes</p>
+<p>Namespace: <a href="https://w3id.org/isample/vocabulary/biologicentity/1.0/biologicentityvocabulary"><code>https://w3id.org/isample/vocabulary/biologicentity/1.0/biologicentityvocabulary</code></a></p>
 <p><strong>History</strong></p>
+<ul>
+<li><p>Based on draft DiSSCo specimen &amp; collection classification, table 2, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/ , with added classes to attempt a logical hierarchy.</p></li>
+<li><p><a href="#biologicalentity">Biological entity</a></p>
+<ul>
+<li><a href="#eukaryote">Eukaryote</a>
+<ul>
+<li><a href="#animalia">Animalia</a>
+<ul>
+<li><a href="#vertebrate">Vertebrate</a>
+<ul>
+<li><a href="#amphibian">Amphibian</a></li>
+<li><a href="#bird">Bird</a></li>
+<li><a href="#fish">Fish</a></li>
+<li><a href="#mammal">Mammal</a></li>
+<li><a href="#reptile">Reptile</a></li>
+</ul></li>
+<li><a href="#arthropod">Arthropod</a>
+<ul>
+<li><a href="#arachnid">Arachnid</a></li>
+<li><a href="#crustacea">Crustaceans</a></li>
+<li><a href="#hexapoda">Insect</a></li>
+<li><a href="#myriapod">Myriapod</a></li>
+<li><a href="#otherarthropod">Other arthropod</a></li>
+</ul></li>
+<li><a href="#mollusca">Mollusca</a></li>
+<li><a href="#otherinvertebrate">Other invertebrate</a></li>
+<li><a href="#porifera">Porifera</a></li>
+</ul></li>
+<li><a href="#fungi">Fungi</a>
+<ul>
+<li><a href="#macrofungi">Macrofungi</a></li>
+<li><a href="#microfungi">Microfungi</a></li>
+</ul></li>
+<li><a href="#plantae">Plantae</a>
+<ul>
+<li><a href="#bryophyte">Bryophyte</a></li>
+<li><a href="#otherplant">Other plant</a></li>
+<li><a href="#pteridophyte">Pteridophyte</a></li>
+<li><a href="#spermatophyte">Seed plant</a></li>
+</ul></li>
+<li><a href="#protista">Protista</a>
+<ul>
+<li><a href="#amoebozoa">Amoebozoa</a>
+<ul>
+<li><a href="#myxomycete">Myxomycetes</a></li>
+</ul></li>
+<li><a href="#protozoa">Protozoa</a></li>
+</ul></li>
+<li><a href="#algae">Algae</a></li>
+<li><a href="#eukaryoticmicroorganisms">Eukaryotic microorganisms</a></li>
+</ul></li>
+<li><a href="#lichen">Lichen</a></li>
+<li><a href="#plasmid">Plasmid</a></li>
+<li><a href="#prokaryote">Prokaryote</a>
+<ul>
+<li><a href="#archaea">Archaea</a></li>
+<li><a href="#bacteria">Bacteria</a></li>
+</ul></li>
+<li><a href="#virus">Virus</a>
+<ul>
+<li><a href="#othervirus">Other Virus</a></li>
+<li><a href="#phage">Phage</a></li>
+</ul></li>
+</ul></li>
+</ul>
 <p><strong>Concepts</strong></p>
+<p><span id="biologicalentity"></span></p>
+<section id="biological-entity" class="level2" data-number="1.1">
+<h2 data-number="1.1" data-anchor-id="biological-entity"><span class="header-section-number">1.1</span> Biological entity</h2>
+<ul>
+<li>Sampled feature is an organism. Use for samples that represent some species of organism as the proximate sampled feature for which the focus is not the environment that the organism inhabits.</li>
+<li>Concept URI token: biologicalentity</li>
+</ul>
+<p><span id="eukaryote"></span></p>
+<section id="eukaryote" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" data-anchor-id="eukaryote"><span class="header-section-number">1.1.1</span> Eukaryote</h3>
+<ul>
+<li><p>Child of: <a href="#biologicalentity"><code>biologicalentity</code></a> <a href="#biologicalentity"><code>biologicalentity</code></a></p></li>
+<li><p>organism whose cells have a nucleus. Includes all animals, plants, fungi, and many unicellular organisms (https://en.wikipedia.org/wiki/Eukaryote)</p></li>
+<li><p>Concept URI token: eukaryote</p></li>
+</ul>
+<p><span id="animalia"></span></p>
+<section id="animalia" class="level4" data-number="1.1.1.1">
+<h4 data-number="1.1.1.1" data-anchor-id="animalia"><span class="header-section-number">1.1.1.1</span> Animalia</h4>
+<ul>
+<li><p>Child of: <a href="#eukaryote"><code>eukaryote</code></a></p></li>
+<li><p>Animals are distinguished from other eukaryotes based on several key characteristics, including: 1) animals are multicellular organisms 2) Animals are heterotrophic, they obtain their food by consuming other organisms or organic matter; 3) Animals lack cell walls; 4) Many animals have a nervous system; 5) Most animals reproduce sexually (Chat GPT)</p></li>
+<li><p>Concept URI token: Animalia</p></li>
+</ul>
+<p><span id="vertebrate"></span></p>
+<section id="vertebrate" class="level5" data-number="1.1.1.1.1">
+<h5 data-number="1.1.1.1.1" data-anchor-id="vertebrate"><span class="header-section-number">1.1.1.1.1</span> Vertebrate</h5>
+<ul>
+<li><p>Child of: <a href="#Animalia"><code>Animalia</code></a></p></li>
+<li><p>Animals that have a vertebral column, a cranium, an endoskeleton, a well-developed muscular system, and an advanced nervous system (ChatGPT);</p></li>
+<li><p>Concept URI token: Vertebrate</p></li>
+</ul>
+<p><span id="amphibian"></span></p>
+<section id="amphibian" class="level6" data-number="1.1.1.1.1.1">
+<h6 data-number="1.1.1.1.1.1" data-anchor-id="amphibian"><span class="header-section-number">1.1.1.1.1.1</span> Amphibian</h6>
+<ul>
+<li><p>Child of: <a href="#Vertebrate"><code>Vertebrate</code></a></p></li>
+<li><p>Vertebrates that have a dual life cycle, semi-permeable skin, absence of scales and claws, a three-chambered heart, and dependence on water for reproduction and survival (ChatGPT)</p></li>
+<li><p>Concept URI token: amphibian</p></li>
+</ul>
+<p><span id="bird"></span></p>
+</section>
+<section id="bird" class="level6" data-number="1.1.1.1.1.2">
+<h6 data-number="1.1.1.1.1.2" data-anchor-id="bird"><span class="header-section-number">1.1.1.1.1.2</span> Bird</h6>
+<ul>
+<li><p>Child of: <a href="#Vertebrate"><code>Vertebrate</code></a></p></li>
+<li><p>Vertebrates that have feathers, lightweight, hollow bones, a beak, an efficient respiratory system, and are warm-blooded. (ChatGPT) {<span class="citation" data-cites="en">@en</span>}</p></li>
+<li><p>Concept URI token: bird</p></li>
+</ul>
+<p><span id="fish"></span></p>
+</section>
+<section id="fish" class="level6" data-number="1.1.1.1.1.3">
+<h6 data-number="1.1.1.1.1.3" data-anchor-id="fish"><span class="header-section-number">1.1.1.1.1.3</span> Fish</h6>
+<ul>
+<li><p>Child of: <a href="#Vertebrate"><code>Vertebrate</code></a></p></li>
+<li><p>Vertebrates that have gills, scales, fins, are cold-blooded, and commonly have a swim bladder; includes jawless fish, cartilaginous fish and bony fish. (ChatGPT)</p></li>
+<li><p>Concept URI token: fish</p></li>
+</ul>
+<p><span id="mammal"></span></p>
+</section>
+<section id="mammal" class="level6" data-number="1.1.1.1.1.4">
+<h6 data-number="1.1.1.1.1.4" data-anchor-id="mammal"><span class="header-section-number">1.1.1.1.1.4</span> Mammal</h6>
+<ul>
+<li><p>Child of: <a href="#Vertebrate"><code>Vertebrate</code></a></p></li>
+<li><p>vertebrates that have mammary glands, hair or fur, three middle ear bones, specialized teeth, and are warm-blooded. (ChatGPT)</p></li>
+<li><p>Concept URI token: mammal</p></li>
+</ul>
+<p><span id="reptile"></span></p>
+</section>
+<section id="reptile" class="level6" data-number="1.1.1.1.1.5">
+<h6 data-number="1.1.1.1.1.5" data-anchor-id="reptile"><span class="header-section-number">1.1.1.1.1.5</span> Reptile</h6>
+<ul>
+<li><p>Child of: <a href="#Vertebrate"><code>Vertebrate</code></a></p></li>
+<li><p>Vertebrates that have scaly skin and claws, amniotic eggs, are cold- blooded, and are ectothermic (ChatGPT)</p></li>
+<li><p>Concept URI token: reptile</p></li>
+</ul>
+<p><span id="arthropod"></span></p>
+</section>
+</section>
+<section id="arthropod" class="level5" data-number="1.1.1.1.2">
+<h5 data-number="1.1.1.1.2" data-anchor-id="arthropod"><span class="header-section-number">1.1.1.1.2</span> Arthropod</h5>
+<ul>
+<li><p>Child of: <a href="#Animalia"><code>Animalia</code></a></p></li>
+<li><p>invertebrate animals with an exoskeleton, a segmented body, and paired jointed appendages. Arthropods form the phylum Arthropoda. They are distinguished by their jointed limbs and cuticle made of chitin, often mineralised with calcium carbonate. The arthropod body plan consists of segments, each with a pair of appendages. Arthropods are bilaterally symmetrical and their body possesses an external skeleton. (https://en.wikipedia.org/wiki/Arthropod)</p></li>
+<li><p>Concept URI token: arthropod</p></li>
+</ul>
+<p><span id="arachnid"></span></p>
+<section id="arachnid" class="level6" data-number="1.1.1.1.2.1">
+<h6 data-number="1.1.1.1.2.1" data-anchor-id="arachnid"><span class="header-section-number">1.1.1.1.2.1</span> Arachnid</h6>
+<ul>
+<li><p>Child of: <a href="#arthropod"><code>arthropod</code></a></p></li>
+<li><p>a group of arthropods that share several key characteristics, including two main body segments, four pairs of legs, lack of antennae, simple eyes, and specialized feeding and defense structures called chelicerae (ChatGPT)</p></li>
+<li><p>Concept URI token: arachnid</p></li>
+</ul>
+<p><span id="crustacea"></span></p>
+</section>
+<section id="crustaceans" class="level6" data-number="1.1.1.1.2.2">
+<h6 data-number="1.1.1.1.2.2" data-anchor-id="crustaceans"><span class="header-section-number">1.1.1.1.2.2</span> Crustaceans</h6>
+<ul>
+<li><p>Child of: <a href="#arthropod"><code>arthropod</code></a></p></li>
+<li><p>arthropod taxon which includes such animals as decapods, seed shrimp, branchiopods, fish lice, krill, remipedes, isopods, barnacles, copepods, amphipods and mantis shrimp. crustaceans have an exoskeleton, which they moult to grow. They are distinguished from other groups of arthropods, such as insects, myriapods and chelicerates, by the possession of biramous (two-parted) limbs, and by their larval forms, such as the nauplius stage of branchiopods and copepods. (https://en.wikipedia.org/wiki/Crustacean)</p></li>
+<li><p>Concept URI token: crustacea</p></li>
+</ul>
+<p><span id="hexapoda"></span></p>
+</section>
+<section id="insect" class="level6" data-number="1.1.1.1.2.3">
+<h6 data-number="1.1.1.1.2.3" data-anchor-id="insect"><span class="header-section-number">1.1.1.1.2.3</span> Insect</h6>
+<ul>
+<li><p>Child of: <a href="#arthropod"><code>arthropod</code></a></p></li>
+<li><p>Include all hexapoda here; Insects are a group of hexapod arthropods characterized by having three main body segments (head, thorax, and abdomen), six legs, and wings in many species. All other hexapod arthropods, such as springtails and diplurans, are not classified as insects, but they share the same body plan of three main body segments and six legs. However, they lack wings and other features that are unique to insects. Therefore, all insects are hexapods, but not all hexapods are insects. (ChatGPT)</p></li>
+<li><p><strong>Alternate labels:</strong> Hexapoda</p></li>
+<li><p>Concept URI token: hexapoda</p></li>
+</ul>
+<p><span id="myriapod"></span></p>
+</section>
+<section id="myriapod" class="level6" data-number="1.1.1.1.2.4">
+<h6 data-number="1.1.1.1.2.4" data-anchor-id="myriapod"><span class="header-section-number">1.1.1.1.2.4</span> Myriapod</h6>
+<ul>
+<li><p>Child of: <a href="#arthropod"><code>arthropod</code></a></p></li>
+<li><p>Arthropods such as millipedes and centipedes. (https://en.wikipedia.org/wiki/Myriapoda). A group of arthropods that have long, segmented body with numerous pairs of legs, simple eyes, specialized mouthparts, and a primarily terrestrial habitat, which distinguishes them from other arthropod groups such as insects and crustaceans. (ChatGPT)</p></li>
+<li><p>Concept URI token: myriapod</p></li>
+</ul>
+<p><span id="otherarthropod"></span></p>
+</section>
+<section id="other-arthropod" class="level6" data-number="1.1.1.1.2.5">
+<h6 data-number="1.1.1.1.2.5" data-anchor-id="other-arthropod"><span class="header-section-number">1.1.1.1.2.5</span> Other arthropod</h6>
+<ul>
+<li><p>Child of: <a href="#arthropod"><code>arthropod</code></a></p></li>
+<li><p>includes Chelicerata (horseshoe crabs, scorpions, and sea spiders), Trilobitomorpha ( extinct trilobites), and Pentastomida (parasitic arthropods that infect the respiratory systems of reptiles and mammals). (ChatGPT)</p></li>
+<li><p>Concept URI token: otherarthropod</p></li>
+</ul>
+<p><span id="mollusca"></span></p>
+</section>
+</section>
+<section id="mollusca" class="level5" data-number="1.1.1.1.3">
+<h5 data-number="1.1.1.1.3" data-anchor-id="mollusca"><span class="header-section-number">1.1.1.1.3</span> Mollusca</h5>
+<ul>
+<li><p>Child of: <a href="#Animalia"><code>Animalia</code></a></p></li>
+<li><p>animals that have a soft body with a mantle, a radula (ribbon-like structure covered in tiny teeth that is used to scrape food), a muscular foot, an open circulatory system, and a visceral mass that contains the internal organs, including the digestive, excretory, and reproductive systems. (ChatGPT)</p></li>
+<li><p><strong>Alternate labels:</strong> bivalves, cephalopods, gastropods,</p></li>
+<li><p>Concept URI token: mollusca</p></li>
+</ul>
+<p><span id="otherinvertebrate"></span></p>
+</section>
+<section id="other-invertebrate" class="level5" data-number="1.1.1.1.4">
+<h5 data-number="1.1.1.1.4" data-anchor-id="other-invertebrate"><span class="header-section-number">1.1.1.1.4</span> Other invertebrate</h5>
+<ul>
+<li><p>Child of: <a href="#Animalia"><code>Animalia</code></a></p></li>
+<li><p>Includes Cnidaria (jellyfish, coral, anemones), Echinodermata (starfish, sea urchins, sea cucumbers), Nematoda (roundworms), Platyhelminthes (flatworms), Annelida (segmented worms), Ctenophora (comb jellies), Brachiopoda (lamp shells), Bryozoa (moss animals), Chaetognatha (arrow worms), Hemichordata (acorn worms), Xenacoelomorpha (simple-bodied worms) (ChatGPT)</p></li>
+<li><p>Concept URI token: otherinvertebrate</p></li>
+</ul>
+<p><span id="porifera"></span></p>
+</section>
+<section id="porifera" class="level5" data-number="1.1.1.1.5">
+<h5 data-number="1.1.1.1.5" data-anchor-id="porifera"><span class="header-section-number">1.1.1.1.5</span> Porifera</h5>
+<ul>
+<li><p>Child of: <a href="#Animalia"><code>Animalia</code></a></p></li>
+<li><p>multicellular animals that have bodies full of pores and channels allowing water to circulate through them, consisting of jelly-like mesohyl sandwiched between two thin layers of cells. (https://en.wikipedia.org/wiki/Sponge)</p></li>
+<li><p><strong>Alternate labels:</strong> sponges</p></li>
+<li><p>Concept URI token: porifera</p></li>
+</ul>
+<p><span id="fungi"></span></p>
+</section>
+</section>
+<section id="fungi" class="level4" data-number="1.1.1.2">
+<h4 data-number="1.1.1.2" data-anchor-id="fungi"><span class="header-section-number">1.1.1.2</span> Fungi</h4>
+<ul>
+<li><p>Child of: <a href="#eukaryote"><code>eukaryote</code></a></p></li>
+<li><p>eukaryotic organisms that contain chitin in their cell walls, are heterotrophs (they obtain their nutrients by absorbing organic material from their environment, either as decomposers, parasites, or symbionts) , lack chloroplasts, reproduce both sexually and asexually, and can take on a variety of growth forms, including single-celled yeasts, multicellular molds, and complex, specialized fruiting bodies. (ChatGPT)</p></li>
+<li><p>Concept URI token: Fungi</p></li>
+</ul>
+<p><span id="macrofungi"></span></p>
+<section id="macrofungi" class="level5" data-number="1.1.1.2.1">
+<h5 data-number="1.1.1.2.1" data-anchor-id="macrofungi"><span class="header-section-number">1.1.1.2.1</span> Macrofungi</h5>
+<ul>
+<li><p>Child of: <a href="#Fungi"><code>Fungi</code></a></p></li>
+<li><p>Macrofungi refers to all fungi that produce visible fruiting bodies. These fungi are evolutionarily and ecologically very divergent. Evolutionarily, they belong to two main phyla, Ascomycota and Basidiomycota, and many of them have relatives that cannot form visible fruiting bodies.(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6106070/)</p></li>
+<li><p>Concept URI token: macrofungi</p></li>
+</ul>
+<p><span id="microfungi"></span></p>
+</section>
+<section id="microfungi" class="level5" data-number="1.1.1.2.2">
+<h5 data-number="1.1.1.2.2" data-anchor-id="microfungi"><span class="header-section-number">1.1.1.2.2</span> Microfungi</h5>
+<ul>
+<li><p>Child of: <a href="#Fungi"><code>Fungi</code></a></p></li>
+<li><p>Microfungi or micromycetes are fungi—eukaryotic organisms such as molds, mildews and rusts—which have microscopic spore-producing structures. They exhibit tube tip-growth and have cell walls composed of chitin, a polymer of N-acetylglucosamine. Microfungi are a paraphyletic group, distinguished from macrofungi only by the absence of a large, multicellular fruiting body. Include moulds, yeasts. (https://en.wikipedia.org/wiki/Microfungi)</p></li>
+<li><p><strong>Alternate labels:</strong> micromycetes</p></li>
+<li><p>Concept URI token: microfungi</p></li>
+</ul>
+<p><span id="plantae"></span></p>
+</section>
+</section>
+<section id="plantae" class="level4" data-number="1.1.1.3">
+<h4 data-number="1.1.1.3" data-anchor-id="plantae"><span class="header-section-number">1.1.1.3</span> Plantae</h4>
+<ul>
+<li><p>Child of: <a href="#eukaryote"><code>eukaryote</code></a></p></li>
+<li><p>Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food; a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage; specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT)</p></li>
+<li><p>Concept URI token: Plantae</p></li>
+</ul>
+<p><span id="bryophyte"></span></p>
+<section id="bryophyte" class="level5" data-number="1.1.1.3.1">
+<h5 data-number="1.1.1.3.1" data-anchor-id="bryophyte"><span class="header-section-number">1.1.1.3.1</span> Bryophyte</h5>
+<ul>
+<li><p>Child of: <a href="#Plantae"><code>Plantae</code></a></p></li>
+<li><p>Non-vascular plants that do not have specialized tissues for transporting water and nutrients; includes mosses, Marchantiophyta (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)</p></li>
+<li><p>Concept URI token: bryophyte</p></li>
+</ul>
+<p><span id="otherplant"></span></p>
+</section>
+<section id="other-plant" class="level5" data-number="1.1.1.3.2">
+<h5 data-number="1.1.1.3.2" data-anchor-id="other-plant"><span class="header-section-number">1.1.1.3.2</span> Other plant</h5>
+<ul>
+<li><p>Child of: <a href="#Plantae"><code>Plantae</code></a></p></li>
+<li><p>plants that do not fit in other plant sub class. Includes Lycopodiophyta (clubmosses) and Equisetophyta (horsetails)</p></li>
+<li><p>Concept URI token: otherplant</p></li>
+</ul>
+<p><span id="pteridophyte"></span></p>
+</section>
+<section id="pteridophyte" class="level5" data-number="1.1.1.3.3">
+<h5 data-number="1.1.1.3.3" data-anchor-id="pteridophyte"><span class="header-section-number">1.1.1.3.3</span> Pteridophyte</h5>
+<ul>
+<li><p>Child of: <a href="#Plantae"><code>Plantae</code></a></p></li>
+<li><p>a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts)</p></li>
+<li><p>Concept URI token: pteridophyte</p></li>
+</ul>
+<p><span id="spermatophyte"></span></p>
+</section>
+<section id="seed-plant" class="level5" data-number="1.1.1.3.4">
+<h5 data-number="1.1.1.3.4" data-anchor-id="seed-plant"><span class="header-section-number">1.1.1.3.4</span> Seed plant</h5>
+<ul>
+<li><p>Child of: <a href="#Plantae"><code>Plantae</code></a></p></li>
+<li><p>Plant that produces seeds, hence the alternative name seed plant. Spermatophytes are a subset of the embryophytes or land plants. They include most familiar types of plants, including all flowers and most trees, but exclude some other types of plants such as ferns, mosses, algae. (https://en.wikipedia.org/wiki/Spermatophyte). Includes Gymnosperms (naked-seed plants) and Angiosperms (flowering plants).</p></li>
+<li><p><strong>Alternate labels:</strong> spermatophyte</p></li>
+<li><p>Concept URI token: spermatophyte</p></li>
+</ul>
+<p><span id="protista"></span></p>
+</section>
+</section>
+<section id="protista" class="level4" data-number="1.1.1.4">
+<h4 data-number="1.1.1.4" data-anchor-id="protista"><span class="header-section-number">1.1.1.4</span> Protista</h4>
+<ul>
+<li><p>Child of: <a href="#eukaryote"><code>eukaryote</code></a></p></li>
+<li><p>any organism whose cells contain a cell nucleus (a eucaryote) that is not an animal, plant, or fungus. (https://en.wikipedia.org/wiki/Protist). Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT)</p></li>
+<li><p>Concept URI token: Protista</p></li>
+</ul>
+<p><span id="amoebozoa"></span></p>
+<section id="amoebozoa" class="level5" data-number="1.1.1.4.1">
+<h5 data-number="1.1.1.4.1" data-anchor-id="amoebozoa"><span class="header-section-number">1.1.1.4.1</span> Amoebozoa</h5>
+<ul>
+<li><p>Child of: <a href="#Protista"><code>Protista</code></a></p></li>
+<li><p>a diverse group of organisms that share certain characteristics, such as the ability to move using pseudopodia, temporary extensions of the cell membrane and cytoplasm that allow the cell to crawl or engulf food particles, the lack of rigid cell walls, presence of mitochondria, which are organelles that generate energy for the cell through cellular respiration (chatGPT)</p></li>
+<li><p>Concept URI token: amoebozoa</p></li>
+</ul>
+<p><span id="myxomycete"></span></p>
+<section id="myxomycetes" class="level6" data-number="1.1.1.4.1.1">
+<h6 data-number="1.1.1.4.1.1" data-anchor-id="myxomycetes"><span class="header-section-number">1.1.1.4.1.1</span> Myxomycetes</h6>
+<ul>
+<li><p>Child of: <a href="#amoebozoa"><code>amoebozoa</code></a></p></li>
+<li><p>Aclass of slime molds. All species pass through several, very different morphologic phases, such as microscopic individual cells, slimy amorphous organisms visible with the naked eye and conspicuously shaped fruit bodies. Although they are monocellular, they can reach immense widths and weights. Some consider the Myxomycota to be a separate kingdom, with an unsettled phylogeny because of conflicting molecular and developmental data. The relations among Myxogastrid orders are as yet unclear. (https://en.wikipedia.org/wiki/Mycetozoa). Mycetozoa includes the slime molds, which are a group of organisms that have both amoeboid and fungal-like characteristics. The Mycetozoa can be further subdivided into two groups: the plasmodial slime molds and the cellular slime molds. Myxomycetes are unique among the Amoebozoa in that they have a complex life cycle involving the formation of spore-bearing structures called fruiting bodies, which is a key feature that distinguishes them from other amoebae. (ChatGPT)</p></li>
+<li><p><strong>Alternate labels:</strong> Mycetozoa</p></li>
+<li><p>Concept URI token: myxomycete</p></li>
+</ul>
+<p><span id="protozoa"></span></p>
+</section>
+</section>
+<section id="protozoa" class="level5" data-number="1.1.1.4.2">
+<h5 data-number="1.1.1.4.2" data-anchor-id="protozoa"><span class="header-section-number">1.1.1.4.2</span> Protozoa</h5>
+<ul>
+<li><p>Child of: <a href="#Protista"><code>Protista</code></a></p></li>
+<li><p>A single-celled eukaryote, either free-living or parasitic, that feed on organic matter such as other microorganisms or organic tissues and debris. Historically, protozoans were regarded as ‘one-celled animals’, because they often possess animal-like behaviours, such as motility and predation, and lack a cell wall, as found in plants and many algae. (https://en.wikipedia.org/wiki/Protozoa)</p></li>
+<li><p>Concept URI token: protozoa</p></li>
+</ul>
+<p><span id="algae"></span></p>
+</section>
+</section>
+<section id="algae" class="level4" data-number="1.1.1.5">
+<h4 data-number="1.1.1.5" data-anchor-id="algae"><span class="header-section-number">1.1.1.5</span> Algae</h4>
+<ul>
+<li><p>Child of: <a href="#eukaryote"><code>eukaryote</code></a></p></li>
+<li><p>informal term for a large and diverse group of photosynthetic eukaryotic organisms. Included organisms range from unicellular microalgae, such as Chlorella, Prototheca and the diatoms, to multicellular forms, such as the giant kelp, a large brown alga which may grow up to 50 metres (160 ft) in length. Most are aquatic and autotrophic (they generate food internally) and lack many of the distinct cell and tissue types, such as stomata, xylem and phloem that are found in land plants. Includes red algae (Rhodophycophyta), brown algae (Phaeophycophyta), and green algae (Chlorophycophyta). https://en.wikipedia.org/wiki/Algae</p></li>
+<li><p>Concept URI token: algae</p></li>
+</ul>
+<p><span id="eukaryoticmicroorganisms"></span></p>
+</section>
+<section id="eukaryotic-microorganisms" class="level4" data-number="1.1.1.6">
+<h4 data-number="1.1.1.6" data-anchor-id="eukaryotic-microorganisms"><span class="header-section-number">1.1.1.6</span> Eukaryotic microorganisms</h4>
+<ul>
+<li><p>Child of: <a href="#eukaryote"><code>eukaryote</code></a></p></li>
+<li><p>Eukaryote single-cell organisms that does not fit in one of the other classes.</p></li>
+<li><p>Concept URI token: eukaryoticmicroorganisms</p></li>
+</ul>
+<p><span id="lichen"></span></p>
+</section>
+</section>
+<section id="lichen" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" data-anchor-id="lichen"><span class="header-section-number">1.1.2</span> Lichen</h3>
+<ul>
+<li><p>Child of: <a href="#biologicalentity"><code>biologicalentity</code></a> <a href="#biologicalentity"><code>biologicalentity</code></a></p></li>
+<li><p>A composite organism that arises from algae or cyanobacteria living among filaments of multiple fungi species in a mutualistic relationship. (https://en.wikipedia.org/wiki/Lichen). Lichens are not classified under a specific kingdom as they are a symbiotic association between a fungus and either an alga or a cyanobacterium. The fungal partner belongs to the kingdom Fungi, while the algal or cyanobacterial partner belongs to either the kingdom Plantae or the kingdom Bacteria, respectively. (ChatGPT)</p></li>
+<li><p>Concept URI token: lichen</p></li>
+</ul>
+<p><span id="plasmid"></span></p>
+</section>
+<section id="plasmid" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" data-anchor-id="plasmid"><span class="header-section-number">1.1.3</span> Plasmid</h3>
+<ul>
+<li><p>Child of: <a href="#biologicalentity"><code>biologicalentity</code></a> <a href="#biologicalentity"><code>biologicalentity</code></a></p></li>
+<li><p>A plasmid is a small, extrachromosomal DNA molecule within a cell that is physically separated from chromosomal DNA and can replicate independently. While chromosomes are large and contain all the essential genetic information for living under normal conditions, plasmids are usually very small and contain only additional genes that may be useful in certain situations or conditions. (https://en.wikipedia.org/wiki/Plasmid)</p></li>
+<li><p>Concept URI token: plasmid</p></li>
+</ul>
+<p><span id="prokaryote"></span></p>
+</section>
+<section id="prokaryote" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" data-anchor-id="prokaryote"><span class="header-section-number">1.1.4</span> Prokaryote</h3>
+<ul>
+<li><p>Child of: <a href="#biologicalentity"><code>biologicalentity</code></a> <a href="#biologicalentity"><code>biologicalentity</code></a></p></li>
+<li><p>single-celled organisms that lack a nucleus and other membrane-bound organelles. Unlike cells of animals and other eukaryotes, bacterial cells do not contain a nucleus and rarely harbour membrane-bound organelles. Molecular systematics showed prokaryotic life to consist of two separate domains, originally called Eubacteria and Archaebacteria, but now called Bacteria and Archaea that evolved independently from an ancient common ancestor. Almost all prokaryotes have a cell wall, a protective structure that allows them to survive in extreme conditions, which is located outside of their plasma membrane. Archaea and bacteria cannot reproduce sexually.</p></li>
+<li><p><strong>Alternate labels:</strong> Monera</p></li>
+<li><p>Concept URI token: prokaryote</p></li>
+</ul>
+<p><span id="archaea"></span></p>
+<section id="archaea" class="level4" data-number="1.1.4.1">
+<h4 data-number="1.1.4.1" data-anchor-id="archaea"><span class="header-section-number">1.1.4.1</span> Archaea</h4>
+<ul>
+<li><p>Child of: <a href="#prokaryote"><code>prokaryote</code></a></p></li>
+<li><p>archaeal cell walls are composed of polysaccharides (sugars). they never have peptidoglycan in their cell walls, their cell membranes contain lipids of unique composition (glycerol molecules are mirror images of those found in other cells, and form ether linkages to isoprenoid side chains), and their 16S ribosomal- RNA nucleotide sequences are unlike those of bacteria. (https://quizlet.com/234154298/archaea-and-bacteria-flash-cards/). The common characteristics of Archaebacteria known to date are these:</p></li>
+</ul>
+<ol type="1">
+<li>the presence of characteristic tRNAs and ribosomal RNAs; (2) the absence of peptidoglycan cell walls, with in many cases, replacement by a largely proteinaceous coat; (3) the occurrence of ether linked lipids built from phytanyl chains and (4) in all cases known so far, their occurrence only in unusual habitats. (https://pubmed.ncbi.nlm.nih.gov/691075/)</li>
+</ol>
+<ul>
+<li><p><strong>Alternate labels:</strong> Archaebacteria</p></li>
+<li><p>Concept URI token: archaea</p></li>
+</ul>
+<p><span id="bacteria"></span></p>
+</section>
+<section id="bacteria" class="level4" data-number="1.1.4.2">
+<h4 data-number="1.1.4.2" data-anchor-id="bacteria"><span class="header-section-number">1.1.4.2</span> Bacteria</h4>
+<ul>
+<li><p>Child of: <a href="#prokaryote"><code>prokaryote</code></a></p></li>
+<li><p>a large domain of prokaryotic microorganisms. Bacterial cells do not contain a nucleus and rarely harbour membrane-bound organelles. The bacterial cell is surrounded by a cell membrane, which is made primarily of phospholipids. This membrane encloses the contents of the cell and acts as a barrier to hold nutrients, proteins and other essential components of the cytoplasm within the cell. Bacterial cell walls are composed of peptidoglycan, a complex of protein and sugars, while archaeal cell walls are composed of polysaccharides (sugars). (https://en.wikipedia.org/wiki/Bacteria)</p></li>
+<li><p><strong>Alternate labels:</strong> Eubacteria</p></li>
+<li><p>Concept URI token: bacteria</p></li>
+</ul>
+<p><span id="virus"></span></p>
+</section>
+</section>
+<section id="virus" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" data-anchor-id="virus"><span class="header-section-number">1.1.5</span> Virus</h3>
+<ul>
+<li><p>Child of: <a href="#biologicalentity"><code>biologicalentity</code></a> <a href="#biologicalentity"><code>biologicalentity</code></a></p></li>
+<li><p>A virus is a submicroscopic infectious agent that replicates only inside the living cells of an organism. Realms are Adnaviria, Duplodnaviria, Monodnaviria, Riboviria, Ribozyviria, Varidnaviria (https://en.wikipedia.org/wiki/Virus). Viruses are not cells at all, so they are neither prokaryotes nor eukaryotes. (https://bio.libretext s.org/Bookshelves/Introductory_and_General_Biology/Book)</p></li>
+<li><p>Concept URI token: virus</p></li>
+</ul>
+<p><span id="othervirus"></span></p>
+<section id="other-virus" class="level4" data-number="1.1.5.1">
+<h4 data-number="1.1.5.1" data-anchor-id="other-virus"><span class="header-section-number">1.1.5.1</span> Other Virus</h4>
+<ul>
+<li><p>Child of: <a href="#virus"><code>virus</code></a></p></li>
+<li><p>Virus that is not a member of order Caudovirales (e.g., bacteriophage T4, lambda phage).</p></li>
+<li><p>Concept URI token: othervirus</p></li>
+</ul>
+<p><span id="phage"></span></p>
+</section>
+<section id="phage" class="level4" data-number="1.1.5.2">
+<h4 data-number="1.1.5.2" data-anchor-id="phage"><span class="header-section-number">1.1.5.2</span> Phage</h4>
+<ul>
+<li><p>Child of: <a href="#virus"><code>virus</code></a></p></li>
+<li><p>A bacteriophage, also known informally as a phage, is a duplodnaviria virus that infects and replicates within bacteria and archaea. Bacteriophages are composed of proteins that encapsulate a DNA or RNA genome, and may have structures that are either simple or elaborate. Their genomes may encode as few as four genes (e.g.&nbsp;MS2) and as many as hundreds of genes. Phages replicate within the bacterium following the injection of their genome into its cytoplasm. (https://en.wikipedia.org/wiki/Bacteriophage). Includes all virus in order Caudovirales (e.g., bacteriophage T4, lambda phage).</p></li>
+<li><p><strong>Alternate labels:</strong> bacteriophage</p></li>
+<li><p>Concept URI token: phage</p></li>
+</ul>
+</section>
+</section>
+</section>
 </section>
 
 </main>
