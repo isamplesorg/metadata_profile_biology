@@ -160,16 +160,10 @@ PREFIX rdfs: <{NS['rdfs']}>
         # if not present, then compute and add it for later use.
         # What vocabulary did we just load?
         
-#        q = (
- #           VocabularyStore._PFX
-#            + """SELECT ?s
-#        WHERE {
-#            ?s rdf:type skos:ConceptScheme .
-#        }"""
- #       )
-        # this query will return multiple values if more than one vocab has been loaded
-#        qres = g_loaded.query(q)
         loaded_vocabulary = voc_uri
+        test = self._g.namespace_manager.expand_curie(loaded_vocabulary)
+        L.debug(f"Test Loaded_vocabulary: {test}")
+        
         if loaded_vocabulary is not None:
             L.info("Loaded vocabulary %s", loaded_vocabulary)
             q = (
