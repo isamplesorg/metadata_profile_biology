@@ -34,6 +34,8 @@ import logging
 import logging.config
 import navocab  # this is a local python package with routines for
                 # for interacting with skos rdf in an sqlAlchemy database
+from rdflib import plugin
+
 
 logging_config = {
     "version": 1,
