@@ -157,9 +157,9 @@ def getObjects(g, s, p):
     }""")
 
     L.debug(f"getObject prefixes: {PFX}\n")
-    L.debug(f"getObject subject: {s}\n")
-    L.debug(f"getObject predicate: {p}\n")
-
+    L.debug(f"getObject expand subject: {g.expand_curie(s)}\n")
+    L.debug(f"getObject expand predicate: {g.expand_curie(p)}\n")
+    # g.expand_curie(s)
     qres = g.query(q, initBindings={'subject': s, 'predicate': p})
     L.debug(f"length of qres: {len(qres)}\n", )
     L.debug(f"qres: {qres}\n")
