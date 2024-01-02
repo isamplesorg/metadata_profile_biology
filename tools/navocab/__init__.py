@@ -97,6 +97,7 @@ PREFIX rdfs: <{NS['rdfs']}>
         """Sets up the rdf store using an Sqlite cache."""
 #        L = getLogger()
         L.debug("initialize SQLAlchemy datastore. purge:%s",purge)
+        L.debug("initialize datastore %s", self.store_identifier)
         graph = rdflib.ConjunctiveGraph("SQLAlchemy", identifier=self.store_identifier)
 
         if purge:
