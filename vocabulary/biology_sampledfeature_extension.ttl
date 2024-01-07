@@ -6,12 +6,18 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix sf: <https://w3id.org/isample/vocabulary/sampledfeature/1.0/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix schema: <https://schema.org/> .
 
+<AWDID:2004562>
+  rdf:type schema:Grant ;
+  schema:funder <https://ror.org/04nh1dc89> ;
+  schema:name "Collaborative Research: Frameworks: Internet of Samples: Toward an Interdisciplinary Cyberinfrastructure for Material Samples" ;
+  schema:url "https://nsf.gov/awardsearch/showAward?AWD_ID=2004562" ;
+.
 dct:created
   rdf:type owl:AnnotationProperty ;
 .
@@ -27,18 +33,11 @@ dct:modified
   rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
   rdfs:label "Dr. Stephen M. Richard" ;
 .
-<AWDID:2004562>
-  rdf:type schema:Grant ;
-  schema:funder <https://ror.org/04nh1dc89> ;
-  schema:name "Collaborative Research: Frameworks: Internet of Samples: Toward an Interdisciplinary Cyberinfrastructure for Material Samples" ;
-  schema:url "https://nsf.gov/awardsearch/showAward?AWD_ID=2004562" ;
-.
 bioe:Animalia
   rdf:type skos:Concept ;
   rdfs:label "Animalia"@en ;
   skos:broader bioe:eukaryote ;
-  skos:definition """Animals are distinguished from other eukaryotes based on several key characteristics, including: 1) 
-animals are multicellular organisms 2) Animals are heterotrophic, they obtain their food by consuming other organisms or organic matter; 3) Animals lack cell walls; 4) Many animals have a nervous system; 5\\) Most animals reproduce sexually (Chat GPT)"""@en ;
+  skos:definition "Animals are distinguished from other eukaryotes based on several key characteristics, including: 1) animals are multicellular organisms 2) Animals are heterotrophic, they obtain their food by consuming other organisms or organic matter; 3) Animals lack cell walls; 4) Many animals have a nervous system; 5) Most animals reproduce sexually (Chat GPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Animalia"@en ;
 .
@@ -54,7 +53,7 @@ bioe:Plantae
   rdf:type skos:Concept ;
   rdfs:label "Plantae"@en ;
   skos:broader bioe:eukaryote ;
-  skos:definition "Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food;  a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage;  specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT)"@en ;
+  skos:definition "Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food;  a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage; specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Plantae"@en ;
 .
@@ -62,9 +61,9 @@ bioe:Protista
   rdf:type skos:Concept ;
   rdfs:label "Protista"@en ;
   skos:broader bioe:eukaryote ;
-  skos:definition "any organism whose cells contain a cell nucleus (a eucaryote) that is not an animal, plant, or fungus. (https://en.wikipedia.org/wiki/Protist).  Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT)" ;
+  skos:definition "any organism whose cells contain a cell nucleus (a eucaryote) that is not an animal, plant, or fungus. (https://en.wikipedia.org/wiki/Protist).  Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:note "Alternate approach is to classify any unicellular eukaryotic microorganism as a protist." ;
+  skos:note "Alternate approach is to classify any unicellular eukaryotic microorganism as a protist."@en ;
   skos:prefLabel "Protista"@en ;
 .
 bioe:Vertebrate
@@ -87,11 +86,11 @@ bioe:algae
 .
 bioe:amoebozoa
   rdf:type skos:Concept ;
-  rdfs:label "Amoebozoa  "@en ;
+  rdfs:label "Amoebozoa"@en ;
   skos:broader bioe:Protista ;
   skos:definition "a diverse group of organisms that share certain characteristics, such as the ability to move using pseudopodia, temporary extensions of the cell membrane and cytoplasm that allow the cell to crawl or engulf food particles, the lack of rigid cell walls, presence of mitochondria, which are organelles that generate energy for the cell through cellular respiration (chatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Amoebozoa  "@en ;
+  skos:prefLabel "Amoebozoa"@en ;
 .
 bioe:amphibian
   rdf:type skos:Concept ;
@@ -112,7 +111,7 @@ bioe:arachnid
 bioe:archaea
   rdf:type skos:Concept ;
   rdfs:label "Archaea"@en ;
-  skos:altLabel "Archaebacteria" ;
+  skos:altLabel "Archaebacteria"@en ;
   skos:broader bioe:prokaryote ;
   skos:definition "archaeal cell walls are composed of polysaccharides (sugars). they never have peptidoglycan in their cell walls, their cell membranes contain lipids of unique composition (glycerol molecules are mirror images of those found in other cells, and form ether linkages to isoprenoid side chains), and their 16S ribosomal- RNA nucleotide sequences are unlike those of bacteria. (https://quizlet.com/234154298/archaea-and-bacteria-flash-cards/).  The common characteristics of Archaebacteria known to date are these: (1) the presence of characteristic tRNAs and ribosomal RNAs; (2) the absence of peptidoglycan cell walls, with in many cases, replacement by a largely proteinaceous coat; (3) the occurrence of ether linked lipids built from phytanyl chains and (4) in all cases known so far, their occurrence only in unusual habitats.  (https://pubmed.ncbi.nlm.nih.gov/691075/)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -120,16 +119,16 @@ bioe:archaea
 .
 bioe:arthropod
   rdf:type skos:Concept ;
-  rdfs:label "Arthropod "@en ;
+  rdfs:label "Arthropod"@en ;
   skos:broader bioe:Animalia ;
   skos:definition "invertebrate animals with an exoskeleton, a segmented body, and paired jointed appendages. Arthropods form the phylum Arthropoda. They are distinguished by their jointed limbs and cuticle made of chitin, often mineralised with calcium carbonate. The arthropod body plan consists of segments, each with a pair of appendages. Arthropods are bilaterally symmetrical and their body possesses an external skeleton. (https://en.wikipedia.org/wiki/Arthropod)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Arthropod "@en ;
+  skos:prefLabel "Arthropod"@en ;
 .
 bioe:bacteria
   rdf:type skos:Concept ;
   rdfs:label "Bacteria"@en ;
-  skos:altLabel "Eubacteria" ;
+  skos:altLabel "Eubacteria"@en ;
   skos:broader bioe:prokaryote ;
   skos:definition "a large domain of prokaryotic microorganisms. Bacterial cells do not contain a nucleus and rarely harbour membrane-bound organelles.  The bacterial cell is surrounded by a cell membrane, which is made primarily of phospholipids. This membrane encloses the contents of the cell and acts as a barrier to hold nutrients, proteins and other essential components of the cytoplasm within the cell.  Bacterial cell walls are composed of peptidoglycan, a complex of protein and sugars, while archaeal cell walls are composed of polysaccharides (sugars). (https://en.wikipedia.org/wiki/Bacteria)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -143,11 +142,13 @@ bioe:biologicentityvocabulary
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
   dct:modified "2023-03-23"^^xsd:date ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   dct:source "DiSSCo specimen & collection classification, draft 2023-03-23, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ" ;
   rdfs:label "Biology Extension: Basic taxon classes for biological entity"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:altLabel "Basic taxon classes for biological entity"@en ;
   skos:definition "This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker's five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonaomy and cladistist for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocablaries should be used for other taxonomic schemes"@en ;
+  skos:hasTopConcept sf:biologicalentity ;
   skos:historyNote "Based on draft DiSSCo specimen & collection classification, table 2, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/ , with added classes to attempt a logical hierarchy."@en ;
   skos:prefLabel "Biology Extension: Basic taxon classes for biological entity"@en ;
   schema:funding <AWDID:2004562> ;
@@ -157,7 +158,7 @@ bioe:bird
   rdf:type skos:Concept ;
   rdfs:label "Bird"@en ;
   skos:broader bioe:Vertebrate ;
-  skos:definition "Vertebrates that have feathers, lightweight, hollow bones, a beak, an efficient respiratory system, and are warm-blooded. (ChatGPT) {@en} " ;
+  skos:definition "Vertebrates that have feathers, lightweight, hollow bones, a beak, an efficient respiratory system, and are warm-blooded. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Bird"@en ;
 .
@@ -165,7 +166,7 @@ bioe:bryophyte
   rdf:type skos:Concept ;
   rdfs:label "Bryophyte"@en ;
   skos:broader bioe:Plantae ;
-  skos:definition "Non-vascular plants that do not have specialized tissues for transporting water and nutrients;  includes mosses, Marchantiophyta (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)" ;
+  skos:definition "Non-vascular plants that do not have specialized tissues for transporting water and nutrients;  includes mosses, Marchantiophyta (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Bryophyte"@en ;
 .
@@ -189,7 +190,7 @@ bioe:eukaryoticmicroorganisms
   rdf:type skos:Concept ;
   rdfs:label "Eukaryotic microorganisms"@en ;
   skos:broader bioe:eukaryote ;
-  skos:definition "Eukaryote single-cell organisms that does not fit in one of the other classes." ;
+  skos:definition "Eukaryote single-cell organisms that does not fit in one of the other classes."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Eukaryotic microorganisms"@en ;
 .
@@ -247,9 +248,9 @@ bioe:microfungi
 bioe:mollusca
   rdf:type skos:Concept ;
   rdfs:label "Mollusca"@en ;
-  skos:altLabel "bivalves" ;
-  skos:altLabel "cephalopods" ;
-  skos:altLabel "gastropods" ;
+  skos:altLabel "bivalves"@en ;
+  skos:altLabel "cephalopods"@en ;
+  skos:altLabel "gastropods"@en ;
   skos:broader bioe:Animalia ;
   skos:definition "animals that have a soft body with a mantle, a radula (ribbon-like structure covered in tiny teeth that is used to scrape food), a muscular foot, an open circulatory system, and a visceral mass that contains the internal organs, including the digestive, excretory, and reproductive systems. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -292,18 +293,17 @@ bioe:otherplant
   rdf:type skos:Concept ;
   rdfs:label "Other  plant"@en ;
   skos:broader bioe:Plantae ;
-  skos:definition """plants that do not fit in other plant sub class. Includes Lycopodiophyta (clubmosses) and
-Equisetophyta (horsetails)""" ;
+  skos:definition "plants that do not fit in other plant sub class. Includes Lycopodiophyta (clubmosses) and Equisetophyta (horsetails)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Other plant"@en ;
 .
 bioe:othervirus
   rdf:type skos:Concept ;
-  rdfs:label "Other Virus "@en ;
+  rdfs:label "Other Virus"@en ;
   skos:broader bioe:virus ;
-  skos:definition "Virus that is not a member of order Caudovirales (e.g., bacteriophage T4, lambda phage). " ;
+  skos:definition "Virus that is not a member of order Caudovirales (e.g., bacteriophage T4, lambda phage)."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Other Virus  "@en ;
+  skos:prefLabel "Other Virus"@en ;
 .
 bioe:phage
   rdf:type skos:Concept ;
@@ -325,7 +325,7 @@ bioe:plasmid
 bioe:porifera
   rdf:type skos:Concept ;
   rdfs:label "Porifera"@en ;
-  skos:altLabel "sponges" ;
+  skos:altLabel "sponges"@en ;
   skos:broader bioe:Animalia ;
   skos:definition "multicellular animals that have bodies full of pores and channels allowing water to circulate through them, consisting of jelly-like mesohyl sandwiched between two thin layers of cells. (https://en.wikipedia.org/wiki/Sponge)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -344,7 +344,7 @@ bioe:protozoa
   rdf:type skos:Concept ;
   rdfs:label "Protozoa"@en ;
   skos:broader bioe:Protista ;
-  skos:definition "A single-celled eukaryote, either free-living or parasitic, that feed on organic matter such as other microorganisms or organic tissues and debris. Historically, protozoans were regarded as 'one-celled animals', because they often possess animal-like behaviours, such as motility and predation, and lack a cell wall, as found in plants and many algae. (https://en.wikipedia.org/wiki/Protozoa)" ;
+  skos:definition "A single-celled eukaryote, either free-living or parasitic, that feed on organic matter such as other microorganisms or organic tissues and debris. Historically, protozoans were regarded as 'one-celled animals', because they often possess animal-like behaviours, such as motility and predation, and lack a cell wall, as found in plants and many algae. (https://en.wikipedia.org/wiki/Protozoa)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Protozoa"@en ;
 .
@@ -352,7 +352,7 @@ bioe:pteridophyte
   rdf:type skos:Concept ;
   rdfs:label "Pteridophyte"@en ;
   skos:broader bioe:Plantae ;
-  skos:definition "a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes  Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts) " ;
+  skos:definition "a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes  Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Pteridophyte"@en ;
 .
@@ -369,7 +369,7 @@ bioe:spermatophyte
   rdfs:label "Seed plant"@en ;
   skos:altLabel "spermatophyte"@en ;
   skos:broader bioe:Plantae ;
-  skos:definition "Plant that produces seeds, hence the alternative name seed plant. Spermatophytes are a subset of the embryophytes or land plants. They include most familiar types of plants, including all flowers and most trees, but exclude some other types of plants such as ferns, mosses, algae. (https://en.wikipedia.org/wiki/Spermatophyte). Includes Gymnosperms (naked-seed plants) and Angiosperms (flowering plants). " ;
+  skos:definition "Plant that produces seeds, hence the alternative name seed plant. Spermatophytes are a subset of the embryophytes or land plants. They include most familiar types of plants, including all flowers and most trees, but exclude some other types of plants such as ferns, mosses, algae. (https://en.wikipedia.org/wiki/Spermatophyte). Includes Gymnosperms (naked-seed plants) and Angiosperms (flowering plants)."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Seed plant"@en ;
 .
@@ -388,5 +388,6 @@ sf:biologicalentity
   skos:definition "Sampled feature is an organism. Use for samples that represent some species of organism as the proximate sampled feature for which the focus is not the environment that the organism inhabits."@en ;
   skos:note "Based on DiSSCo listing in table 2 of https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/, draft DiSSCo specimen & collection classification (2023-03-27)"@en ;
   skos:prefLabel "Biological entity"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:topConceptOf bioe:biologicentityvocabulary ;
 .
