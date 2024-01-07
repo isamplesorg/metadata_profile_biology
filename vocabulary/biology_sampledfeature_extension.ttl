@@ -142,14 +142,14 @@ bioe:biologicentityvocabulary
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
   dct:modified "2023-03-23"^^xsd:date ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
   dct:source "DiSSCo specimen & collection classification, draft 2023-03-23, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ" ;
   rdfs:label "Biology Extension: Basic taxon classes for biological entity"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:altLabel "Basic taxon classes for biological entity"@en ;
-  skos:definition "This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker's five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonaomy and cladistist for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocablaries should be used for other taxonomic schemes"@en ;
+  skos:definition "This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker's five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonomy and cladistics for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocablaries should be used for other taxonomic schemes"@en ;
   skos:hasTopConcept sf:biologicalentity ;
   skos:historyNote "Based on draft DiSSCo specimen & collection classification, table 2, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/ , with added classes to attempt a logical hierarchy."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Biology Extension: Basic taxon classes for biological entity"@en ;
   schema:funding <AWDID:2004562> ;
   schema:provider <https://vocabs.ardc.edu.au/> ;
@@ -386,8 +386,8 @@ sf:biologicalentity
   rdf:type skos:Concept ;
   rdfs:label "Biological entity"@en ;
   skos:definition "Sampled feature is an organism. Use for samples that represent some species of organism as the proximate sampled feature for which the focus is not the environment that the organism inhabits."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:note "Based on DiSSCo listing in table 2 of https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/, draft DiSSCo specimen & collection classification (2023-03-27)"@en ;
   skos:prefLabel "Biological entity"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:topConceptOf bioe:biologicentityvocabulary ;
 .
