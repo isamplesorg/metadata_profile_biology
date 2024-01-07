@@ -153,6 +153,7 @@ bioe:biologicentityvocabulary
   skos:prefLabel "Biology Extension: Basic taxon classes for biological entity"@en ;
   schema:funding <AWDID:2004562> ;
   schema:provider <https://vocabs.ardc.edu.au/> ;
+  schema:codeRepository <https://github.com/isamplesorg/metadata_profile_biology/tree/main/vocabulary> ;
 .
 bioe:bird
   rdf:type skos:Concept ;
