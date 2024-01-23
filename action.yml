@@ -10,7 +10,7 @@ description: 'creates a docker container to run python routines that
        2) generate markdown from the skos vocabularies using Quarto markdown'
 inputs:
   action:  
-    description: 'Which action to run -- defaults to uijson'
+    description: 'Which action to run -- defaults to docs'
     required: true
     default: 'docs'
   path: 
