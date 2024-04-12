@@ -36,51 +36,6 @@ rdfs:seeAlso
   rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
   rdfs:label "Dr. Stephen M. Richard" ;
 .
-bioe:Animalia
-  rdf:type skos:Concept ;
-  rdfs:label "Animalia"@en ;
-  rdfs:seeAlso <https://www.gbif.org/species/1> ;
-  skos:broader bioe:eukaryote ;
-  skos:definition "Animals are distinguished from other eukaryotes based on several key characteristics, including: 1) animals are multicellular organisms 2) Animals are heterotrophic, they obtain their food by consuming other organisms or organic matter; 3) Animals lack cell walls; 4) Many animals have a nervous system; 5) Most animals reproduce sexually (Chat GPT)"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Animalia"@en ;
-.
-bioe:Fungi
-  rdf:type skos:Concept ;
-  rdfs:label "Fungi"@en ;
-  rdfs:seeAlso <https://www.gbif.org/species/5> ;
-  skos:broader bioe:eukaryote ;
-  skos:definition "eukaryotic organisms that contain chitin in their cell walls, are heterotrophs (they obtain their nutrients by absorbing organic material from their environment, either as decomposers, parasites, or symbionts) , lack chloroplasts, reproduce both sexually and asexually, and can take on a variety of growth forms, including single-celled yeasts, multicellular molds, and complex, specialized fruiting bodies. (ChatGPT)"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Fungi"@en ;
-.
-bioe:Plantae
-  rdf:type skos:Concept ;
-  rdfs:label "Plantae"@en ;
-  rdfs:seeAlso <https://www.gbif.org/species/6> ;
-  skos:broader bioe:eukaryote ;
-  skos:definition "Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food;  a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage; specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT)"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Plantae"@en ;
-.
-bioe:Protista
-  rdf:type skos:Concept ;
-  rdfs:label "Other Protozoa"@en ;
-  skos:altLabel "Protista"@en ;
-  skos:broader bioe:protozoa ;
-  skos:definition "Protozoa is not Amoebozoa or Mycetozoa.  Includes phylum Euglenozoa and Microsporidia prominently among others."@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:note "Alternate approach is to classify any unicellular eukaryotic microorganism as a protist."@en ;
-  skos:prefLabel "Other Protozoa"@en ;
-.
-bioe:Vertebrate
-  rdf:type skos:Concept ;
-  rdfs:label "Vertebrate "@en ;
-  skos:broader bioe:Animalia ;
-  skos:definition "Animals that have a vertebral column, a cranium, an endoskeleton, a well-developed muscular system, and an advanced nervous system (ChatGPT);"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Vertebrate "@en ;
-.
 bioe:algae
   rdf:type skos:Concept ;
   rdfs:label "Algae"@en ;
@@ -88,8 +43,8 @@ bioe:algae
   skos:definition "Informal term for a large and diverse group of photosynthetic eukaryotic organisms.  Included organisms range from unicellular microalgae, such as Chlorella, Prototheca and the diatoms, to multicellular forms, such as the giant kelp, a large brown alga which may grow up to 50 metres (160 ft) in length. Most are aquatic and autotrophic (they generate food internally) and lack many of the distinct cell and tissue types, such as stomata, xylem and phloem that are found in land plants.  Includes red algae (Rhodophycophyta), brown algae (Phaeophycophyta), and green algae (Chlorophyta). https://en.wikipedia.org/wiki/Algae"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Algae"@en ;
-  skos:related bioe:Plantae ;
-  skos:related bioe:Protista ;
+  skos:related bioe:otherprotozoa ;
+  skos:related bioe:plantae ;
   skos:scopeNote "Note red algae (Rhodophycophyta, Rhodophyta) and green algae (Chlorophyta) are considered Plantae and brown algae are considered Chromista by Ruggiero et al. 2015 (doi: 10.1371/journal.pone.0119248). " ;
 .
 bioe:amoebozoa
@@ -104,10 +59,19 @@ bioe:amoebozoa
 bioe:amphibian
   rdf:type skos:Concept ;
   rdfs:label "Amphibian"@en ;
-  skos:broader bioe:Vertebrate ;
+  skos:broader bioe:vertebrate ;
   skos:definition "Vertebrates that have a dual life cycle, semi-permeable skin, absence of scales and claws, a three-chambered heart, and dependence on water for reproduction and survival (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Amphibian"@en ;
+.
+bioe:animalia
+  rdf:type skos:Concept ;
+  rdfs:label "Animalia"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/1> ;
+  skos:broader bioe:eukaryote ;
+  skos:definition "Animals are distinguished from other eukaryotes based on several key characteristics, including: 1) animals are multicellular organisms 2) Animals are heterotrophic, they obtain their food by consuming other organisms or organic matter; 3) Animals lack cell walls; 4) Many animals have a nervous system; 5) Most animals reproduce sexually (Chat GPT)"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Animalia"@en ;
 .
 bioe:arachnid
   rdf:type skos:Concept ;
@@ -133,7 +97,7 @@ bioe:arthropod
   rdf:type skos:Concept ;
   rdfs:label "Arthropod"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/54> ;
-  skos:broader bioe:Animalia ;
+  skos:broader bioe:animalia ;
   skos:definition "invertebrate animals with an exoskeleton, a segmented body, and paired jointed appendages. Arthropods form the phylum Arthropoda. They are distinguished by their jointed limbs and cuticle made of chitin, often mineralised with calcium carbonate. The arthropod body plan consists of segments, each with a pair of appendages. Arthropods are bilaterally symmetrical and their body possesses an external skeleton. (https://en.wikipedia.org/wiki/Arthropod)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Arthropod"@en ;
@@ -176,20 +140,10 @@ bioe:biologicentityvocabulary
 bioe:bird
   rdf:type skos:Concept ;
   rdfs:label "Bird"@en ;
-  skos:broader bioe:Vertebrate ;
+  skos:broader bioe:vertebrate ;
   skos:definition "Vertebrates that have feathers, lightweight, hollow bones, a beak, an efficient respiratory system, and are warm-blooded. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Bird"@en ;
-.
-bioe:bryophyte
-  rdf:type skos:Concept ;
-  rdfs:label "Non-vascular plant"@en ;
-  rdfs:seeAlso <https://www.gbif.org/species/35> ;
-  skos:altLabel "Bryophyte"@en ;
-  skos:broader bioe:Plantae ;
-  skos:definition "Non-vascular plants that do not have specialized tissues for transporting water and nutrients;  includes mosses, Marchantiophyta (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Non-vascular plant"@en ;
 .
 bioe:chromista
   rdf:type skos:Concept ;
@@ -229,11 +183,20 @@ bioe:eukaryoticmicroorganism
 bioe:fish
   rdf:type skos:Concept ;
   rdfs:label "Fish"@en ;
-  skos:broader bioe:Vertebrate ;
+  skos:broader bioe:vertebrate ;
   skos:definition "Vertebrates that have gills, scales, fins, are cold-blooded, and commonly have a swim bladder; includes jawless fish, cartilaginous fish and bony fish. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Fish"@en ;
   skos:scopeNote "Includes Agnatha, Actinopterygii, Chondrichthyes, Sarcopterygii"@en ;
+.
+bioe:fungi
+  rdf:type skos:Concept ;
+  rdfs:label "Fungi"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/5> ;
+  skos:broader bioe:eukaryote ;
+  skos:definition "eukaryotic organisms that contain chitin in their cell walls, are heterotrophs (they obtain their nutrients by absorbing organic material from their environment, either as decomposers, parasites, or symbionts) , lack chloroplasts, reproduce both sexually and asexually, and can take on a variety of growth forms, including single-celled yeasts, multicellular molds, and complex, specialized fruiting bodies. (ChatGPT)"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Fungi"@en ;
 .
 bioe:hexapoda
   rdf:type skos:Concept ;
@@ -256,7 +219,7 @@ bioe:lichen
 bioe:macrofungi
   rdf:type skos:Concept ;
   rdfs:label "Macrofungi"@en ;
-  skos:broader bioe:Fungi ;
+  skos:broader bioe:fungi ;
   skos:definition "Macrofungi refers to all fungi that produce visible fruiting bodies. These fungi are evolutionarily and ecologically very divergent. Evolutionarily, they belong to two main phyla, Ascomycota and Basidiomycota, and many of them have relatives that cannot form visible fruiting bodies.(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6106070/)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Macrofungi"@en ;
@@ -264,7 +227,7 @@ bioe:macrofungi
 bioe:mammal
   rdf:type skos:Concept ;
   rdfs:label "Mammal"@en ;
-  skos:broader bioe:Vertebrate ;
+  skos:broader bioe:vertebrate ;
   skos:definition "vertebrates that have mammary glands, hair or fur, three middle ear bones, specialized teeth, and are warm-blooded. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Mammal"@en ;
@@ -273,7 +236,7 @@ bioe:microfungi
   rdf:type skos:Concept ;
   rdfs:label "Microfungi"@en ;
   skos:altLabel "micromycetes"@en ;
-  skos:broader bioe:Fungi ;
+  skos:broader bioe:fungi ;
   skos:definition "Microfungi or micromycetes are fungi—eukaryotic organisms such as molds, mildews and rusts, which have microscopic spore-producing structures. They exhibit tube tip-growth and have cell walls composed of chitin, a polymer of N-acetylglucosamine. Microfungi are a paraphyletic group, distinguished from macrofungi only by the absence of a large, multicellular fruiting body. Include moulds, yeasts. (https://en.wikipedia.org/wiki/Microfungi)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:note "Single-celled fungi are called yeast."@en ;
@@ -286,7 +249,7 @@ bioe:mollusca
   skos:altLabel "bivalves"@en ;
   skos:altLabel "cephalopods"@en ;
   skos:altLabel "gastropods"@en ;
-  skos:broader bioe:Animalia ;
+  skos:broader bioe:animalia ;
   skos:definition "animals that have a soft body with a mantle, a radula (ribbon-like structure covered in tiny teeth that is used to scrape food), a muscular foot, an open circulatory system, and a visceral mass that contains the internal organs, including the digestive, excretory, and reproductive systems. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Mollusca"@en ;
@@ -309,6 +272,16 @@ bioe:myriapod
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Myriapod"@en ;
 .
+bioe:nonvascularplant
+  rdf:type skos:Concept ;
+  rdfs:label "Non-vascular plant"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/35> ;
+  skos:altLabel "Bryophyte"@en ;
+  skos:broader bioe:plantae ;
+  skos:definition "Non-vascular plants that do not have specialized tissues for transporting water and nutrients;  includes mosses, Marchantiophyta (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Non-vascular plant"@en ;
+.
 bioe:otherarthropod
   rdf:type skos:Concept ;
   rdfs:label "Other arthropod "@en ;
@@ -320,7 +293,7 @@ bioe:otherarthropod
 bioe:otherinvertebrate
   rdf:type skos:Concept ;
   rdfs:label "Other invertebrate "@en ;
-  skos:broader bioe:Animalia ;
+  skos:broader bioe:animalia ;
   skos:definition "Includes Cnidaria (jellyfish, coral, anemones), Echinodermata (starfish, sea urchins, sea cucumbers), Nematoda (roundworms), Platyhelminthes (flatworms), Annelida (segmented worms), Ctenophora (comb jellies), Brachiopoda (lamp shells), Bryozoa (moss animals), Chaetognatha (arrow worms), Hemichordata (acorn worms), Xenacoelomorpha (simple-bodied worms) (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Other invertebrate "@en ;
@@ -328,10 +301,20 @@ bioe:otherinvertebrate
 bioe:otherplant
   rdf:type skos:Concept ;
   rdfs:label "Other  plant"@en ;
-  skos:broader bioe:Plantae ;
+  skos:broader bioe:plantae ;
   skos:definition "plants that do not fit in other plant sub class. Includes Lycopodiophyta (clubmosses) and Equisetophyta (horsetails)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Other plant"@en ;
+.
+bioe:otherprotozoa
+  rdf:type skos:Concept ;
+  rdfs:label "Other Protozoa"@en ;
+  skos:altLabel "Protista"@en ;
+  skos:broader bioe:protozoa ;
+  skos:definition "Protozoa is not Amoebozoa or Mycetozoa.  Includes phylum Euglenozoa and Microsporidia prominently among others."@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:note "Alternate approach is to classify any unicellular eukaryotic microorganism as a protist."@en ;
+  skos:prefLabel "Other Protozoa"@en ;
 .
 bioe:othervirus
   rdf:type skos:Concept ;
@@ -350,6 +333,15 @@ bioe:phage
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Phage"@en ;
 .
+bioe:plantae
+  rdf:type skos:Concept ;
+  rdfs:label "Plantae"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/6> ;
+  skos:broader bioe:eukaryote ;
+  skos:definition "Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food;  a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage; specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT)"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Plantae"@en ;
+.
 bioe:plasmid
   rdf:type skos:Concept ;
   rdfs:label "Plasmid"@en ;
@@ -363,7 +355,7 @@ bioe:porifera
   rdfs:label "Porifera"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/105> ;
   skos:altLabel "sponges"@en ;
-  skos:broader bioe:Animalia ;
+  skos:broader bioe:animalia ;
   skos:definition "multicellular animals that have bodies full of pores and channels allowing water to circulate through them, consisting of jelly-like mesohyl sandwiched between two thin layers of cells. (https://en.wikipedia.org/wiki/Sponge)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Porifera"@en ;
@@ -386,34 +378,42 @@ bioe:protozoa
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Protozoa"@en ;
 .
-bioe:pteridophyte
-  rdf:type skos:Concept ;
-  dct:source <https://en.wikipedia.org/wiki/Pteridophyte> ;
-  rdfs:label "Vascular spore plant"@en ;
-  skos:altLabel "Pteridophyte"@en ;
-  skos:broader bioe:Plantae ;
-  skos:definition "a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes  Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts)"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Vascular spore plant"@en ;
-.
 bioe:reptile
   rdf:type skos:Concept ;
   rdfs:label "Reptile"@en ;
-  skos:broader bioe:Vertebrate ;
+  skos:broader bioe:vertebrate ;
   skos:definition "Vertebrates that have scaly skin and claws, amniotic eggs, are cold-blooded, and are ectothermic (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Reptile"@en ;
   skos:scopeNote "include Crocodylomorpha, Rhynchocephalia, Squamata, Testudinata"@en ;
 .
-bioe:spermatophyte
+bioe:vascularseedplant
   rdf:type skos:Concept ;
   dct:source <https://en.wikipedia.org/wiki/Seed_plant> ;
   rdfs:label "Vascular seed plant"@en ;
   skos:altLabel "spermatophyte"@en ;
-  skos:broader bioe:Plantae ;
+  skos:broader bioe:plantae ;
   skos:definition "Plant that produces seeds, hence the alternative name seed plant. Spermatophytes are a subset of the embryophytes or land plants. They include most familiar types of plants, including all flowers and most trees, but exclude some other types of plants such as ferns, mosses, algae. (https://en.wikipedia.org/wiki/Spermatophyte). Includes Gymnosperms (naked-seed plants) and Angiosperms (flowering plants)."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Vascular seed plant"@en ;
+.
+bioe:vascularsportplant
+  rdf:type skos:Concept ;
+  dct:source <https://en.wikipedia.org/wiki/Pteridophyte> ;
+  rdfs:label "Vascular spore plant"@en ;
+  skos:altLabel "Pteridophyte"@en ;
+  skos:broader bioe:plantae ;
+  skos:definition "a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes  Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts)"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Vascular spore plant"@en ;
+.
+bioe:vertebrate
+  rdf:type skos:Concept ;
+  rdfs:label "Vertebrate "@en ;
+  skos:broader bioe:animalia ;
+  skos:definition "Animals that have a vertebral column, a cranium, an endoskeleton, a well-developed muscular system, and an advanced nervous system (ChatGPT);"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Vertebrate "@en ;
 .
 bioe:virus
   rdf:type skos:Concept ;
