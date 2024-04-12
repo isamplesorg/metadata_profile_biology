@@ -39,6 +39,7 @@ rdfs:seeAlso
 bioe:Animalia
   rdf:type skos:Concept ;
   rdfs:label "Animalia"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/1> ;
   skos:broader bioe:eukaryote ;
   skos:definition "Animals are distinguished from other eukaryotes based on several key characteristics, including: 1) animals are multicellular organisms 2) Animals are heterotrophic, they obtain their food by consuming other organisms or organic matter; 3) Animals lack cell walls; 4) Many animals have a nervous system; 5) Most animals reproduce sexually (Chat GPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -64,12 +65,13 @@ bioe:Plantae
 .
 bioe:Protista
   rdf:type skos:Concept ;
-  rdfs:label "Protista"@en ;
-  skos:broader bioe:eukaryote ;
-  skos:definition "any organism whose cells contain a cell nucleus (a eucaryote) that is not an animal, plant, or fungus. (https://en.wikipedia.org/wiki/Protist).  Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT)"@en ;
+  rdfs:label "Other Protozoa"@en ;
+  skos:altLabel "Protista"@en ;
+  skos:broader bioe:protozoa ;
+  skos:definition "Protozoa is not Amoebozoa or Mycetozoa.  Includes phylum Euglenozoa and Microsporidia prominently among others."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:note "Alternate approach is to classify any unicellular eukaryotic microorganism as a protist."@en ;
-  skos:prefLabel "Protista"@en ;
+  skos:prefLabel "Other Protozoa"@en ;
 .
 bioe:Vertebrate
   rdf:type skos:Concept ;
@@ -83,17 +85,18 @@ bioe:algae
   rdf:type skos:Concept ;
   rdfs:label "Algae"@en ;
   skos:broader bioe:eukaryote ;
-  skos:definition "informal term for a large and diverse group of photosynthetic eukaryotic organisms.  Included organisms range from unicellular microalgae, such as Chlorella, Prototheca and the diatoms, to multicellular forms, such as the giant kelp, a large brown alga which may grow up to 50 metres (160 ft) in length. Most are aquatic and autotrophic (they generate food internally) and lack many of the distinct cell and tissue types, such as stomata, xylem and phloem that are found in land plants.  Includes red algae (Rhodophycophyta), brown algae (Phaeophycophyta), and green algae (Chlorophycophyta). https://en.wikipedia.org/wiki/Algae"@en ;
+  skos:definition "Informal term for a large and diverse group of photosynthetic eukaryotic organisms.  Included organisms range from unicellular microalgae, such as Chlorella, Prototheca and the diatoms, to multicellular forms, such as the giant kelp, a large brown alga which may grow up to 50 metres (160 ft) in length. Most are aquatic and autotrophic (they generate food internally) and lack many of the distinct cell and tissue types, such as stomata, xylem and phloem that are found in land plants.  Includes red algae (Rhodophycophyta), brown algae (Phaeophycophyta), and green algae (Chlorophyta). https://en.wikipedia.org/wiki/Algae"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Algae"@en ;
   skos:related bioe:Plantae ;
   skos:related bioe:Protista ;
+  skos:scopeNote "Note red algae (Rhodophycophyta, Rhodophyta) and green algae (Chlorophyta) are considered Plantae and brown algae are considered Chromista by Ruggiero et al. 2015 (doi: 10.1371/journal.pone.0119248). " ;
 .
 bioe:amoebozoa
   rdf:type skos:Concept ;
   rdfs:label "Amoebozoa"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/7509337> ;
-  skos:broader bioe:Protista ;
+  skos:broader bioe:protozoa ;
   skos:definition "a diverse group of organisms that share certain characteristics, such as the ability to move using pseudopodia, temporary extensions of the cell membrane and cytoplasm that allow the cell to crawl or engulf food particles, the lack of rigid cell walls, presence of mitochondria, which are organelles that generate energy for the cell through cellular respiration (chatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Amoebozoa"@en ;
@@ -161,10 +164,11 @@ bioe:biologicentityvocabulary
   rdfs:label "Biology Extension: Basic taxon classes for biological entity"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:altLabel "Basic taxon classes for biological entity"@en ;
-  skos:definition "This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker's five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonomy and cladistics for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocablaries should be used for other taxonomic schemes"@en ;
+  skos:definition "This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker's five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonomy and cladistics for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocabularies should be used for other taxonomic schemes"@en ;
   skos:editorialNote "see Ruggiero et al 2015 https://doi.org/10.1371/journal.pone.0119248 for a more comprehensive and scientific classificatoin of all living things."@en ;
   skos:hasTopConcept sf:biologicalentity ;
   skos:historyNote "2024-01-19 SMR add cross reference to GBIF taxonomy backbone where mapping was apparent."@en ;
+  skos:historyNote "2024-04-12 SMR.  Import of GEOME records show that many samples are classified as Kingdom Chromista, but this is missing from this vocabulary extension (https://github.com/isamplesorg/vocabularies/issues/17).  Hierarchy and classes reviewed; deprecate Protista and make it an alternate name in Eukaryotic microorganism class and update definition; add Chromista; update scope notes for Eukaryote.  Harmonize better with GBIF tree of life:  Make Mycetozoa subclass of Protozoa, not subclass of Amoebozoa, add Other Protozoa class for logical completeness."@en ;
   skos:historyNote "Based on draft DiSSCo specimen & collection classification, table 2, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/ , with added classes to attempt a logical hierarchy."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Biology Extension: Basic taxon classes for biological entity"@en ;
@@ -186,6 +190,14 @@ bioe:bryophyte
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Bryophyte"@en ;
 .
+bioe:chromista
+  rdf:type skos:Concept ;
+  rdfs:label "Chromista"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/4> ;
+  skos:broader bioe:eukaryote ;
+  skos:definition "Chromists are unified by a shared common ancestral body plan with (1) a skeleton comprising cortical alveoli with subpellicular microtubules and a microtubule bypassing band distinct from the three major microtubule centriolar roots inherited from excavate protozoa, and (2) chloroplasts of red algal origin inside the endomembrane system with unique membrane topology and derlin-based periplastid protein import machinery.  Chromists are distinguished from Plantae because of more complex chloroplast-associated membrane topology and rigid tubular multipartite ciliary hairs.  The kingdom includes highly divergent cytoskeletons and trophic modes. Chromista comprise eight distinctive phyla (Cavalier-Smith, 2018) and includes a majority of marine algae and of heterotrophic protists,  various human disease agents such as malaria parasites, and agricultural pathogens like potato blight and sugar beet rhizomania disease. They have a greater range of body plans and lifestyles than the entire plant kingdom and more phyla than kingdoms Fungi or Protozoa."@en ;
+  skos:prefLabel "Chromista"@en ;
+.
 bioe:crustacea
   rdf:type skos:Concept ;
   rdfs:label "Crustaceans"@en ;
@@ -198,17 +210,20 @@ bioe:eukaryote
   rdf:type skos:Concept ;
   rdfs:label "eukaryote"@en ;
   skos:broader sf:biologicalentity ;
-  skos:definition "organism whose cells have a nucleus. Includes all animals, plants, fungi, and many unicellular organisms (https://en.wikipedia.org/wiki/Eukaryote)"@en ;
+  skos:definition "Organism whose cells have a nucleus. Includes all animals, plants, fungi, and many unicellular organisms (https://en.wikipedia.org/wiki/Eukaryote).   Eucaryote membranes are flexible, and contain cholesterol. The membrane, nucleus, and structures are supported by cross-connecting protein filaments. Cells are ~10 times larger in radius relative to prokaryotes. Cells have several types of internal enclosed compartments. Cell walls, if present, are made from cellulose or chitin, in contrast to prokaryotes. Eukaryotes have novel modes of direct body movement and swimming, based on sensors, and the mode of reproduction uses sexual combination. Their DNA is linear but wound up into nucleosomes and then chromosomes. (https://doi.org/10.1016/B978-044452115-6/50050-6, table 7-2). Eukaryotes can be considered a chimera; a combination of archaeal and bacterial features that result in the cellular complexity and distinctive characteristics. (https://doi.org/10.1016/j.tim.2021.11.003)."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Eukaryote"@en ;
 .
-bioe:eukaryoticmicroorganisms
+bioe:eukaryoticmicroorganism
   rdf:type skos:Concept ;
-  rdfs:label "Eukaryotic microorganisms"@en ;
+  rdfs:label "Eukaryotic microorganism"@en ;
+  rdfs:seeAlso <https://en.wikipedia.org/wiki/Protist> ;
+  skos:altLabel "Protista"@en ;
   skos:broader bioe:eukaryote ;
-  skos:definition "Eukaryote single-cell organisms that does not fit in one of the other classes."@en ;
+  skos:definition "Unclassified Eukaryote single-cell organisms; might be microfungi, microalgae, Protista or Chromista."@en ;
+  skos:editorialNote "Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Eukaryotic microorganisms"@en ;
+  skos:prefLabel "Eukaryotic microorganism"@en ;
 .
 bioe:fish
   rdf:type skos:Concept ;
@@ -275,6 +290,16 @@ bioe:mollusca
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Mollusca"@en ;
 .
+bioe:mycetozoa
+  rdf:type skos:Concept ;
+  rdfs:label "Mycetozoa"@en ;
+  rdfs:seeAlso <https://www.gbif.org/species/33> ;
+  skos:altLabel "Myxomycota"@en ;
+  skos:broader bioe:protozoa ;
+  skos:definition "Mycetozoa includes the slime molds, which are a group of organisms that have both amoeboid and fungal-like characteristics. The Mycetozoa can be further subdivided into two groups: the plasmodial slime molds and the cellular slime molds. Myxomycetes has most child orders; they are  class of slime molds.   Myxomycetes are unique among the Amoebozoa in that they have a complex life cycle involving the formation of spore-bearing structures called fruiting bodies, which is a key feature that distinguishes them from other amoebae.   All species pass through several, very different morphologic phases, such as microscopic individual cells, slimy amorphous organisms visible with the naked eye and conspicuously shaped fruit bodies. Although they are monocellular, they can reach immense widths and weights.  (https://en.wikipedia.org/wiki/Mycetozoa).  (ChatGPT)"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Mycetozoa"@en ;
+.
 bioe:myriapod
   rdf:type skos:Concept ;
   rdfs:label "Myriapod"@en ;
@@ -282,15 +307,6 @@ bioe:myriapod
   skos:definition "Arthropods such as millipedes and centipedes. (https://en.wikipedia.org/wiki/Myriapoda). A group of arthropods that have long, segmented body with numerous pairs of legs, simple eyes, specialized mouthparts, and a primarily terrestrial habitat, which distinguishes them from other arthropod groups such as insects and crustaceans. (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Myriapod"@en ;
-.
-bioe:myxomycete
-  rdf:type skos:Concept ;
-  rdfs:label "Myxomycetes"@en ;
-  skos:altLabel "Mycetozoa"@en ;
-  skos:broader bioe:amoebozoa ;
-  skos:definition "A class of slime molds. All species pass through several, very different morphologic phases, such as microscopic individual cells, slimy amorphous organisms visible with the naked eye and conspicuously shaped fruit bodies. Although they are monocellular, they can reach immense widths and weights. Some consider the Myxomycota to be a separate kingdom, with an unsettled phylogeny because of conflicting molecular and developmental data. The relations among Myxogastrid orders are as yet unclear. (https://en.wikipedia.org/wiki/Mycetozoa).  Mycetozoa includes the slime molds, which are a group of organisms that have both amoeboid and fungal-like characteristics. The Mycetozoa can be further subdivided into two groups: the plasmodial slime molds and the cellular slime molds. Myxomycetes are unique among the Amoebozoa in that they have a complex life cycle involving the formation of spore-bearing structures called fruiting bodies, which is a key feature that distinguishes them from other amoebae. (ChatGPT)"@en ;
-  skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Myxomycetes"@en ;
 .
 bioe:otherarthropod
   rdf:type skos:Concept ;
@@ -364,13 +380,14 @@ bioe:protozoa
   rdf:type skos:Concept ;
   rdfs:label "Protozoa"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/7> ;
-  skos:broader bioe:Protista ;
-  skos:definition "A single-celled eukaryote, either free-living or parasitic, that feed on organic matter such as other microorganisms or organic tissues and debris. Historically, protozoans were regarded as 'one-celled animals', because they often possess animal-like behaviours, such as motility and predation, and lack a cell wall, as found in plants and many algae. (https://en.wikipedia.org/wiki/Protozoa)"@en ;
+  skos:broader bioe:eukaryote ;
+  skos:definition "A single-celled eukaryote, either free-living or parasitic, that feed on organic matter such as other microorganisms or organic tissues and debris (predominantly heterotrophic). Historically, protozoans were regarded as 'one-celled animals', because they often possess animal-like behaviours, such as motility and predation, and lack a cell wall, as found in plants and many algae. (https://en.wikipedia.org/wiki/Protozoa)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Protozoa"@en ;
 .
 bioe:pteridophyte
   rdf:type skos:Concept ;
+  dct:source <https://en.wikipedia.org/wiki/Pteridophyte> ;
   rdfs:label "Pteridophyte"@en ;
   skos:broader bioe:Plantae ;
   skos:definition "a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes  Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts)"@en ;
@@ -388,6 +405,7 @@ bioe:reptile
 .
 bioe:spermatophyte
   rdf:type skos:Concept ;
+  dct:source <https://en.wikipedia.org/wiki/Seed_plant> ;
   rdfs:label "Seed plant"@en ;
   skos:altLabel "spermatophyte"@en ;
   skos:broader bioe:Plantae ;
