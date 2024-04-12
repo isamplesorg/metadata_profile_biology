@@ -183,12 +183,13 @@ bioe:bird
 .
 bioe:bryophyte
   rdf:type skos:Concept ;
-  rdfs:label "Bryophyte"@en ;
+  rdfs:label "Non-vascular plant"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/35> ;
+  skos:altLabel "Bryophyte"@en ;
   skos:broader bioe:Plantae ;
   skos:definition "Non-vascular plants that do not have specialized tissues for transporting water and nutrients;  includes mosses, Marchantiophyta (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Bryophyte"@en ;
+  skos:prefLabel "Non-vascular plant"@en ;
 .
 bioe:chromista
   rdf:type skos:Concept ;
@@ -388,11 +389,12 @@ bioe:protozoa
 bioe:pteridophyte
   rdf:type skos:Concept ;
   dct:source <https://en.wikipedia.org/wiki/Pteridophyte> ;
-  rdfs:label "Pteridophyte"@en ;
+  rdfs:label "Vascular spore plant"@en ;
+  skos:altLabel "Pteridophyte"@en ;
   skos:broader bioe:Plantae ;
   skos:definition "a vascular plant (with xylem and phloem) that disperses spores; they produce neither flowers nor seeds, Includes  Ferns, horsetails (often treated as ferns), and lycophytes (clubmosses, spikemosses, and quillworts)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Pteridophyte"@en ;
+  skos:prefLabel "Vascular spore plant"@en ;
 .
 bioe:reptile
   rdf:type skos:Concept ;
@@ -406,12 +408,12 @@ bioe:reptile
 bioe:spermatophyte
   rdf:type skos:Concept ;
   dct:source <https://en.wikipedia.org/wiki/Seed_plant> ;
-  rdfs:label "Seed plant"@en ;
+  rdfs:label "Vascular seed plant"@en ;
   skos:altLabel "spermatophyte"@en ;
   skos:broader bioe:Plantae ;
   skos:definition "Plant that produces seeds, hence the alternative name seed plant. Spermatophytes are a subset of the embryophytes or land plants. They include most familiar types of plants, including all flowers and most trees, but exclude some other types of plants such as ferns, mosses, algae. (https://en.wikipedia.org/wiki/Spermatophyte). Includes Gymnosperms (naked-seed plants) and Angiosperms (flowering plants)."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:prefLabel "Seed plant"@en ;
+  skos:prefLabel "Vascular seed plant"@en ;
 .
 bioe:virus
   rdf:type skos:Concept ;
