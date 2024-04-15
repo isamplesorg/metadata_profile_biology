@@ -88,6 +88,7 @@ bioe:archaea
   rdfs:label "Archaea"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/2> ;
   skos:altLabel "Archaebacteria"@en ;
+  skos:altLabel "KINGDOM ARCHAEA (Ruggerio et al. 2015)"@en ;
   skos:broader bioe:prokaryote ;
   skos:definition "archaeal cell walls are composed of polysaccharides (sugars). they never have peptidoglycan in their cell walls, their cell membranes contain lipids of unique composition (glycerol molecules are mirror images of those found in other cells, and form ether linkages to isoprenoid side chains), and their 16S ribosomal- RNA nucleotide sequences are unlike those of bacteria. (https://quizlet.com/234154298/archaea-and-bacteria-flash-cards/).  The common characteristics of Archaebacteria known to date are these: (1) the presence of characteristic tRNAs and ribosomal RNAs; (2) the absence of peptidoglycan cell walls, with in many cases, replacement by a largely proteinaceous coat; (3) the occurrence of ether linked lipids built from phytanyl chains and (4) in all cases known so far, their occurrence only in unusual habitats.  (https://pubmed.ncbi.nlm.nih.gov/691075/)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -107,6 +108,7 @@ bioe:bacteria
   rdfs:label "Bacteria"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/3> ;
   skos:altLabel "Eubacteria"@en ;
+  skos:altLabel "KINGDOM BACTERIA (Ruggerio et al., 2015)"@en ;
   skos:broader bioe:prokaryote ;
   skos:definition "a large domain of prokaryotic microorganisms. Bacterial cells do not contain a nucleus and rarely harbour membrane-bound organelles.  The bacterial cell is surrounded by a cell membrane, which is made primarily of phospholipids. This membrane encloses the contents of the cell and acts as a barrier to hold nutrients, proteins and other essential components of the cytoplasm within the cell.  Bacterial cell walls are composed of peptidoglycan, a complex of protein and sugars, while archaeal cell walls are composed of polysaccharides (sugars). (https://en.wikipedia.org/wiki/Bacteria)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -149,6 +151,7 @@ bioe:chromista
   rdf:type skos:Concept ;
   rdfs:label "Chromista"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/4> ;
+  skos:altLabel "KINGDOM CHROMISTA (Ruggerio et al., 2015)"@en ;
   skos:broader bioe:eukaryote ;
   skos:definition "Chromists are unified by a shared common ancestral body plan with (1) a skeleton comprising cortical alveoli with subpellicular microtubules and a microtubule bypassing band distinct from the three major microtubule centriolar roots inherited from excavate protozoa, and (2) chloroplasts of red algal origin inside the endomembrane system with unique membrane topology and derlin-based periplastid protein import machinery.  Chromists are distinguished from Plantae because of more complex chloroplast-associated membrane topology and rigid tubular multipartite ciliary hairs.  The kingdom includes highly divergent cytoskeletons and trophic modes. Chromista comprise eight distinctive phyla (Cavalier-Smith, 2018) and includes a majority of marine algae and of heterotrophic protists,  various human disease agents such as malaria parasites, and agricultural pathogens like potato blight and sugar beet rhizomania disease. They have a greater range of body plans and lifestyles than the entire plant kingdom and more phyla than kingdoms Fungi or Protozoa."@en ;
   skos:prefLabel "Chromista"@en ;
@@ -176,7 +179,7 @@ bioe:eukaryoticmicroorganism
   skos:altLabel "Protista"@en ;
   skos:broader bioe:eukaryote ;
   skos:definition "Unclassified Eukaryote single-cell organisms; might be microfungi, microalgae, Protista or Chromista."@en ;
-  skos:editorialNote "Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT)"@en ;
+  skos:editorialNote "Protista is not a specific taxonomic group, but a term that historically referred to a group of eukaryotic organisms that did not fit into the other kingdoms of plants, animals, and fungi. (ChatGPT).  Ruggerio et al (2015) use the label 'protist' for unicellular eukaryotes, a polyphyletic group members of which do not undergo tissue formation through the process of embryological layering."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Eukaryotic microorganism"@en ;
 .
@@ -194,7 +197,7 @@ bioe:fungi
   rdfs:label "Fungi"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/5> ;
   skos:broader bioe:eukaryote ;
-  skos:definition "eukaryotic organisms that contain chitin in their cell walls, are heterotrophs (they obtain their nutrients by absorbing organic material from their environment, either as decomposers, parasites, or symbionts) , lack chloroplasts, reproduce both sexually and asexually, and can take on a variety of growth forms, including single-celled yeasts, multicellular molds, and complex, specialized fruiting bodies. (ChatGPT)"@en ;
+  skos:definition "eukaryotic organisms that contain chitin in their cell walls, are heterotrophs (they obtain their nutrients by absorbing organic material from their environment, either as decomposers, parasites, or symbionts) , lack chloroplasts, reproduce both sexually and asexually, and can take on a variety of growth forms, including single-celled yeasts, multicellular molds, and complex, specialized fruiting bodies. (ChatGPT).   Biologists use the term ‘fungus’ to include eukaryotic, spore-bearing, achlorophyllous organisms that generally reproduce sexually and asexually. They are usually made up of filamentous, branched somatic structures which are typically surrounded by cell walls containing chitin or cellulose, or both of these substances. (https://plantlet.org/lower-fungi-higher-fungi/)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Fungi"@en ;
 .
@@ -260,7 +263,8 @@ bioe:mycetozoa
   rdfs:seeAlso <https://www.gbif.org/species/33> ;
   skos:altLabel "Myxomycota"@en ;
   skos:broader bioe:protozoa ;
-  skos:definition "Mycetozoa includes the slime molds, which are a group of organisms that have both amoeboid and fungal-like characteristics. The Mycetozoa can be further subdivided into two groups: the plasmodial slime molds and the cellular slime molds. Myxomycetes has most child orders; they are  class of slime molds.   Myxomycetes are unique among the Amoebozoa in that they have a complex life cycle involving the formation of spore-bearing structures called fruiting bodies, which is a key feature that distinguishes them from other amoebae.   All species pass through several, very different morphologic phases, such as microscopic individual cells, slimy amorphous organisms visible with the naked eye and conspicuously shaped fruit bodies. Although they are monocellular, they can reach immense widths and weights.  (https://en.wikipedia.org/wiki/Mycetozoa).  (ChatGPT)"@en ;
+  skos:definition "Mycetozoa includes the slime molds, which are a group of organisms that have both amoeboid and fungal-like characteristics. The Mycetozoa can be further subdivided into two groups: the plasmodial slime molds and the cellular slime molds. Myxomycetes has most child orders; they are  class of slime molds.   Myxomycetes have a complex life cycle involving the formation of spore-bearing structures called fruiting bodies, which is a key feature that distinguishes them from other amoebae.   All species pass through several, very different morphologic phases, such as microscopic individual cells, slimy amorphous organisms visible with the naked eye and conspicuously shaped fruit bodies. Although they are monocellular, they can reach immense widths and weights.  (https://en.wikipedia.org/wiki/Mycetozoa).  (ChatGPT)"@en ;
+  skos:editorialNote "This class is not included in Ruggerio et al. (2015) system, but is present in GBIF tree of life."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Mycetozoa"@en ;
 .
@@ -309,11 +313,9 @@ bioe:otherplant
 bioe:otherprotozoa
   rdf:type skos:Concept ;
   rdfs:label "Other Protozoa"@en ;
-  skos:altLabel "Protista"@en ;
   skos:broader bioe:protozoa ;
   skos:definition "Protozoa is not Amoebozoa or Mycetozoa.  Includes phylum Euglenozoa and Microsporidia prominently among others."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
-  skos:note "Alternate approach is to classify any unicellular eukaryotic microorganism as a protist."@en ;
   skos:prefLabel "Other Protozoa"@en ;
 .
 bioe:othervirus
@@ -335,10 +337,11 @@ bioe:phage
 .
 bioe:plantae
   rdf:type skos:Concept ;
+  dct:source "Margulis L, Schwartz KV. Five kingdoms: an illustrated guide to the phyla of life on earth, third edition, New York, WH Freeman and Company, 2001." ;
   rdfs:label "Plantae"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/6> ;
   skos:broader bioe:eukaryote ;
-  skos:definition "Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food;  a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage; specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT)"@en ;
+  skos:definition "Plants are eukaryotes that have cell walls made of cellulose, specialized organelles called chloroplasts, which contain chlorophyll and other pigments that allow plants to perform photosynthesis and produce their own food;  a unique life cycle that involves alternating between a haploid gametophyte stage and a diploid sporophyte stage; specialized regions called apical meristems at the tips of their roots and shoots, which allow for growth and the development of new tissues; specialized structures for reproduction, including flowers, cones, and spores, and most plants have specialized tissues called xylem and phloem, which transport water, nutrients, and other substances throughout the plant. (ChatGPT). Subdivision here follows Margulis and Schwartz 2001."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
   skos:prefLabel "Plantae"@en ;
 .
@@ -364,6 +367,7 @@ bioe:prokaryote
   rdf:type skos:Concept ;
   rdfs:label "Prokaryote"@en ;
   skos:altLabel "Monera"@en ;
+  skos:altLabel "SUPERKINGDOM PROKARYOTA (Ruggerio et al, 2015)"@en ;
   skos:broader sf:biologicalentity ;
   skos:definition "single-celled organisms that lack a nucleus and other membrane-bound organelles. Unlike cells of animals and other eukaryotes, bacterial cells do not contain a nucleus and rarely harbour membrane-bound organelles. Molecular systematics showed prokaryotic life to consist of two separate domains, originally called Eubacteria and Archaebacteria, but now called Bacteria and Archaea that evolved independently from an ancient common ancestor. Almost all prokaryotes have a cell wall, a protective structure that allows them to survive in extreme conditions, which is located outside of their plasma membrane. Archaea and bacteria cannot reproduce sexually."@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
@@ -373,6 +377,7 @@ bioe:protozoa
   rdf:type skos:Concept ;
   rdfs:label "Protozoa"@en ;
   rdfs:seeAlso <https://www.gbif.org/species/7> ;
+  skos:altLabel "KINGDOM PROTOZOA (Ruggerio et al., 2015)"@en ;
   skos:broader bioe:eukaryote ;
   skos:definition "A single-celled eukaryote, either free-living or parasitic, that feed on organic matter such as other microorganisms or organic tissues and debris (predominantly heterotrophic). Historically, protozoans were regarded as 'one-celled animals', because they often possess animal-like behaviours, such as motility and predation, and lack a cell wall, as found in plants and many algae. (https://en.wikipedia.org/wiki/Protozoa)"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
