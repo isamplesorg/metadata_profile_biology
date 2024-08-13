@@ -121,7 +121,7 @@ bioe:biologicentityvocabulary
   dct:created "2023-03-23"^^xsd:date ;
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-  dct:modified "2024-01-19"^^xsd:date ;
+  dct:modified "2024-04-12"^^xsd:date ;
   dct:source "DiSSCo specimen & collection classification, draft 2023-03-23, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ" ;
   dct:source "many definitions are cobbled together from content found on the world wide web, including Wikipedia and ChatGPT v3.5 queries."@en ;
   schema:codeRepository <https://github.com/isamplesorg/metadata_profile_biology/tree/main/vocabulary> ;
@@ -136,7 +136,6 @@ bioe:biologicentityvocabulary
   skos:historyNote "2024-01-19 SMR add cross reference to GBIF taxonomy backbone where mapping was apparent."@en ;
   skos:historyNote "2024-04-12 SMR.  Import of GEOME records show that many samples are classified as Kingdom Chromista, but this is missing from this vocabulary extension (https://github.com/isamplesorg/vocabularies/issues/17).  Hierarchy and classes reviewed; deprecate Protista and make it an alternate name in Eukaryotic microorganism class and update definition; add Chromista; update scope notes for Eukaryote.  Harmonize better with GBIF tree of life:  Make Mycetozoa subclass of Protozoa, not subclass of Amoebozoa, add Other Protozoa class for logical completeness. increment version to 1.1; these are not breaking changes, but addition of new class and hierarchy adjustments in protozoa are more than incremental."@en ;
   skos:historyNote "Based on draft DiSSCo specimen & collection classification, table 2, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/ , with added classes to attempt a logical hierarchy."@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Biology Extension: Basic taxon classes for biological entity"@en ;
 .
 bioe:bird
@@ -154,8 +153,8 @@ bioe:chromista
   skos:altLabel "KINGDOM CHROMISTA (Ruggerio et al., 2015)"@en ;
   skos:broader bioe:eukaryote ;
   skos:definition "Chromists are unified by a shared common ancestral body plan with (1) a skeleton comprising cortical alveoli with subpellicular microtubules and a microtubule bypassing band distinct from the three major microtubule centriolar roots inherited from excavate protozoa, and (2) chloroplasts of red algal origin inside the endomembrane system with unique membrane topology and derlin-based periplastid protein import machinery.  Chromists are distinguished from Plantae because of more complex chloroplast-associated membrane topology and rigid tubular multipartite ciliary hairs.  The kingdom includes highly divergent cytoskeletons and trophic modes. Chromista comprise eight distinctive phyla (Cavalier-Smith, 2018) and includes a majority of marine algae and of heterotrophic protists,  various human disease agents such as malaria parasites, and agricultural pathogens like potato blight and sugar beet rhizomania disease. They have a greater range of body plans and lifestyles than the entire plant kingdom and more phyla than kingdoms Fungi or Protozoa."@en ;
-  skos:prefLabel "Chromista"@en ;
   skos:inScheme bioe:biologicentityvocabulary ;
+  skos:prefLabel "Chromista"@en ;
 .
 bioe:crustacea
   rdf:type skos:Concept ;
