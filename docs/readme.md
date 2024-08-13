@@ -1,4 +1,4 @@
-# Documentation and vocabulary presentation pages for biology samples
+# Vocabulary resources for iSamples biology material sample extensions
 
 What's here:
 HTML representations of draft vocabularies for extending sampled feature for biologic samples with biological taxa.
