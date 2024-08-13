@@ -1,6 +1,19 @@
-#  Vocabulary presentation template
+# Vocabulary extensions for Biological material samples.
 
-This repository hosts python code and github actions to support maintenance and presentation of vocabularies represented using the SKOS RDF vocabulary, serialized using Turtle. It includes a github action configuration that will update files representing the vocabulary in Markdown and HTML format. The SKOS representation of the vocabularies in the Vocabulary folder are considered the canonical versions; changes to the vocabulary should be made in the SKOS files; updates (pushes) to the vocabulary will trigger a Github action update the Markdown and HTML representations. The HTML representation is published via Github pages from the content in the docs folder.
+## Vocabulary documents
+This repository hosts the one extension vocabularys for use with iSamples metadata describing biological taxa as the sampled feature for Biological material samples. The authoritative source files are rdf SKOS vocabularies serialized using Turtle syntax. These are in the **vocabulary** folder. The **docs** folder contains Markdown and HTML presentations of the vocabulary content. 
+
+### What's here:
+HTML representations of draft vocabularies for extending sampled feature for biologic samples with biological taxa.
+
+[HTML web page version](https://isamplesorg.github.io/metadata_profile_biology/biology_sampledfeature_extension.html) 
+
+[ARDC Research Vocabularies Australia (RVA) vocabulary service landing page](https://vocabs.ardc.edu.au/viewById/672)
+
+[RDF source file](https://raw.githubusercontent.com/isamplesorg/metadata_profile_biology/main/vocabulary/biology_sampledfeature_extension.ttl). This is the authoritative representation. 
+
+##  Vocabulary presentation template
+This repository hosts python code and github actions support maintenance and presentation of vocabularies represented using the SKOS RDF vocabulary, serialized using Turtle. It includes a github action configuration that will update files representing the vocabulary in Markdown and HTML format. The SKOS representation of the vocabularies in the Vocabulary folder are considered the canonical versions; changes to the vocabulary should be made in the SKOS files; updates (pushes) to the vocabulary will trigger a Github action update the Markdown and HTML representations. The HTML representation is published via Github pages from the content in the docs folder.
 
 The code and workflow here were developed by Dave Vieglais for the [iSamples project](https://isamplesorg.github.io/) to support not only the generation of the github.io pages, but more general methods for accessing the vocabularies via SPARQL queries. The vocabulary access functionality is implemented by the navocab.py in the tools/navocab directory in the repository.   
 
@@ -26,8 +39,8 @@ Subdirectories are:
   - navocab: contains navocab.py, which implements methods for accessing the SKOS vocabularies that are cached in the cache/vocabularies.db SQLAlchemy database. Only the database initialization and loading functions from this program are used for generating the Markdown and HTML representations. 
 - Vocabulary: contains SKOS vocabularies serialized using the turtle format.
 
-## Implementation: 
-### Vocabulary github action
+### Implementation: 
+#### Vocabulary github action
 
 The `action.yml` (which is required to be located at the root of the repository) defines the action inputs and outputs.  
 
@@ -35,7 +48,7 @@ The action is run as a Docker image, and the image is built according to the ins
 
 The code in this repository is designed to read a vocabulary serialized using SKOS RDF/Turtle. The source turtle files, with file extension '.ttl', are expected to reside in the vocabulary directory in the repository.
 
-### The processing pattern: 
+#### The processing pattern: 
 
 When you run the action **Process vocabularies**, it looks at /action.yml (github does this w/o any asking-- you just have to know it happens); this configuration file provides some metadata about the action, defines the input variables (not their values), and the process that the action runs, in this case Docker to build a container defined by /Dockerfile. GitHub is responsible for converting the action parameters defined in action.yml and  assigned values in process_vocab.yml into environment variables that are accessible to the python code that executes in the Docker container.
 -- action.yml triggers deploying a Docker container defined by Dockerfile 
@@ -61,21 +74,21 @@ All output is placed in the \docs directory.
 
 Finally, the `deploy ...` steps in the workflow defined by .github/workflows/process_vocab.yml copy the output from the docs directory to the docs directory in the host github, and the cache directory with updated vocabularies.db into the cache directory on the host.
  
-## Python code
+### Python code
 - vocab.py: loads vocabs into the SQLAlchemy database vocabularies.db
 - vocab2mdCacheV2.py: reads a vocab specified by a root (skos:ConceptScheme) URI from the vocabularies.db database and generates Markdown and HTML or JSON depending on the 'command' input parameter
 - runVocabtools.py: a version of github_action_main.py set up to run offline in an IDE environment for testing
 
-## Github configuration
+### Github configuration
 - Options: fork this repository, or create a new repository using the template. If you fork the repository it might be easier to sync with updates to the code made in the template repository.
 - enable github actions
 - enable github pages, based on the docs directory and main branch.  HTML pages can be viewed in a browser at https://{yourOrgName}.github.io/{theNAMEyouGiveTheForkedRepo}/{vocabFileName}.html
 
-### SKOS vocabulary conventions 
+#### SKOS vocabulary conventions 
 The code assumes the root of the repository is a skos:ConceptScheme, and that there is a skos:prefLabel for the ConceptScheme.  The uri for the conceptScheme must use a CURIE with the prefix defined in the prefix section of the skos file. The terms in teh vocabualary must all be skos:Concept, with a skos:prefLabel. The top concepts in the vocabulary must be identified with a skos:topConceptOf assertion. Hierarchy must be represented with skos:broader predicates link a term with its parent term (or terms).rdfs:comment or skos:definition will be used as term definitions. Other predicates that are recognized: skos:altLabel, rdfs:seeAlso, dublin core terms (dct:) source, dct:modified, skos:historyNote. Other predicates with the vocabulary as subject will not be shown in the output.
 
-### Testing
+#### Testing
 There is a test file at `.github/workflows/integration.yml`, which can be run manually using the workflow dispatch option.  It contains the necessary instruction to check out the repository and run it as a GitHub action.
 
-### 
+### Docker entrypoint
 The Docker entrypoint of the action is the python file located at `.github/actions/vocabularies/github_action_main.py`.  GitHub is responsible for converting the action parameters into environment variables that the script interprets.
