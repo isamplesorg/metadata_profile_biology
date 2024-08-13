@@ -1,7 +1,7 @@
-# baseURI: https://w3id.org/isample/biology/biosampledfeature/1.0/biologicentityvocabulary
+# baseURI: https://w3id.org/isample/biology/biosampledfeature/1.1/biologicentityvocabulary
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix bioe: <https://w3id.org/isample/biology/biosampledfeature/1.0/> .
+@prefix bioe: <https://w3id.org/isample/biology/biosampledfeature/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -134,7 +134,7 @@ bioe:biologicentityvocabulary
   skos:editorialNote "see Ruggiero et al 2015 https://doi.org/10.1371/journal.pone.0119248 for a more comprehensive and scientific classificatoin of all living things."@en ;
   skos:hasTopConcept sf:biologicalentity ;
   skos:historyNote "2024-01-19 SMR add cross reference to GBIF taxonomy backbone where mapping was apparent."@en ;
-  skos:historyNote "2024-04-12 SMR.  Import of GEOME records show that many samples are classified as Kingdom Chromista, but this is missing from this vocabulary extension (https://github.com/isamplesorg/vocabularies/issues/17).  Hierarchy and classes reviewed; deprecate Protista and make it an alternate name in Eukaryotic microorganism class and update definition; add Chromista; update scope notes for Eukaryote.  Harmonize better with GBIF tree of life:  Make Mycetozoa subclass of Protozoa, not subclass of Amoebozoa, add Other Protozoa class for logical completeness."@en ;
+  skos:historyNote "2024-04-12 SMR.  Import of GEOME records show that many samples are classified as Kingdom Chromista, but this is missing from this vocabulary extension (https://github.com/isamplesorg/vocabularies/issues/17).  Hierarchy and classes reviewed; deprecate Protista and make it an alternate name in Eukaryotic microorganism class and update definition; add Chromista; update scope notes for Eukaryote.  Harmonize better with GBIF tree of life:  Make Mycetozoa subclass of Protozoa, not subclass of Amoebozoa, add Other Protozoa class for logical completeness. increment version to 1.1; these are not breaking changes, but addition of new class and hierarchy adjustments in protozoa are more than incremental."@en ;
   skos:historyNote "Based on draft DiSSCo specimen & collection classification, table 2, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/ , with added classes to attempt a logical hierarchy."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Biology Extension: Basic taxon classes for biological entity"@en ;
