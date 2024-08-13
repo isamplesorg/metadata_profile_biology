@@ -86,7 +86,8 @@ NS = {
     "owl": "http://www.w3.org/2002/07/owl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "obo": "http://purl.obolibrary.org/obo/",
-    "dcterm": "http://purl.org/dc/terms/"
+    "dcterm": "http://purl.org/dc/terms/",
+    "bioe":"https://w3id.org/isample/biology/biosampledfeature/1.0/"
 }
 
 PFX = """
@@ -94,6 +95,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bioe: <https://w3id.org/isample/biology/biosampledfeature/1.0/> 
 """
 
 INDENT = "  "

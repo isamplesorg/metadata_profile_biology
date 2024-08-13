@@ -1,0 +1,66 @@
+tdwg spinach   IUGS Korea   tdwg in okinawa.   Abstract on iSamples sampling nature.  Ap19
+
+BioDT has four leading biodiversity research infrastructures (GBIF, eLTER, DiSSCo and LifeWatch ERIC) involved in the co-creation of the Biodiversity Digital Twin (BioDT) prototypes. These Research Infrastructures are strengthening the existing operational services and infrastructures as well as creating new opportunities for novel uses of their resources. https://biodt.eu/research-infrastructures
+(They have session at TDWG https://www.tdwg.org/conferences/2024/sessions/#sym06-biodiversity-data-standards-and-fair-in-prototyping-biodiversity-digital-twins in Okinawa)
+Session Type: Symposium; Open to abstract submissions
+Conference Track: TDWG
+Organizers: Dmitry Schigel, Kate Ingenloff, Sharif Islam
+
+
+Chromista-- note usage GBIF possible overlap with algae
+The Chromista kingdom is a fascinating group of eukaryotic organisms with unique characteristics. ...what defines this ... biological kingdom:
+
+Photosynthetic Organelles (Plastids):
+Chromista includes both single-celled and multicellular species.
+What unites them is their photosynthetic organelles, known as plastids.
+These plastids contain chlorophyll c and are surrounded by four membranes.
+If the ancestor already possessed chloroplasts derived from red algae through endosymbiosis, non-photosynthetic Chromista have secondarily lost the ability to photosynthesize1.
+Origin and Diversity:
+Chromista might have independently arisen as separate evolutionary groups from the last eukaryotic common ancestor.
+The kingdom was initially proposed by British biologist Thomas Cavalier-Smith in 1981.
+It originally consisted mostly of photosynthetic eukaryotes (algae) but later included many heterotrophs (protozoa).
+As of 2018, Chromista was nearly as diverse as the Kingdoms Plantae and Animalia, comprising eight phyla.
+Notable members include marine algae, potato blight, dinoflagellates, Paramecium, the brain parasite Toxoplasma, and the malarial parasite Plasmodium1.
+Polyphyletic Nature:
+However, Cavalier-Smith’s hypothesis of chromist monophyly has been challenged.
+Some chromists may have acquired their plastids by incorporating another chromist rather than inheriting them from a common ancestor.
+The plastids’ history differs from their hosts, suggesting multiple transmission events between different groups1.
+Distinctive Features:
+Chromista organisms possess chlorophyll c (unlike plants) and do not store energy as starch.
+They are not closely related to other algae or plants.
+Chromista includes various groups such as stramenopiles, haptophytes, and cryptophytes2.
+In summary, Chromista showcases a captivating blend of photosynthetic and non-photosynthetic eukaryotes, each with its own evolutionary journey and unique adaptations.
+[from Microsoft CoPilot]
+
+Chromists—ancestrally eukaryote-eukaryote chimaeras that arose by symbiotic enslavement of a eukaryote (red alga), thus mostly with plastids—and Protozoa that arose ancestrally and monophyletically by the origin of the eukaryote cell from a prokaryote and its enslavement of symbiotic purple bacteria to make mitochondria (Cavalier-Smith 2014b) differ essentially in membrane topology and protein targeting (which played key but different roles in their respective origins) and in their contrasting phylogenetic positions. 
+
+Eukaryote: Their membranes are flexible, and contain cholesterol. The membrane, nucleus, and structures are supported by cross-connecting protein filaments. Cells are ~10 times in radius relative to prokaryotes. Cells have several types of internal enclosed compartments. Cell walls, if pressent, are made from cellulose or chitin, in contrast to prokaryotes. Eukaryotes have novel modes of direct body movement and swimming, based on sensors,and the mode of reproduction uses sexual combination.
+
+Biology taxa extension.
+This is intended as a vocabulary for helping users zero in on the kind of biological entity that was sampled-- not a technically accurate taxonomy; intended as much for non-biologists as for biologists.  Detailed taxonomy should be specified using the keywords, with a the taxa level as a a scheme name and optional scheme URI that identifies the taxonomy used for classification. e.g.
+ "keywords": [
+        {
+            "keyword": "Demospongiae",
+            "scheme_name": "Taxon: class"
+        },
+        {
+            "keyword": "Aplysina fistularis",
+            "scheme_name": "Taxon: species"
+        },
+
+Notes of vocab:
+7 kingdoms under Eukaryotes and prokaryote follow Ruggerio et al., 2015, and GBIF tree of life.
+
+Also have classes for virus, plasmid, and lichen. Lichen is a composite organism that arises from algae (eukaryote) or cyanobacteria (prokaryote).
+
+subdivisions under Eukaryotye include 5 kingdoms (Animalia, Chromista, Fungi, Plantae, and Protozoa, but also have class for 'Eukayotic microorganim' as a bin for microscopic things that might be microfungi, Protista or Chromista, and for 'Algae'--photosynthetic eukaryotic organisms, that might be Plantae or Chromista.  Classes are thus overlapping.
+
+Subdivisions under animalia are based on abundance of subdivisions in GBIF tree of life, with 'other' classes for 'Other invertebrate', 'Other Arthropod', 
+
+Subdivision of Fungi (micro and macro) is based on presence of larger multicellular fruiting body. Could also go with lower and higher fungi; "The terms ‘lower fungi’ and ‘higher fungi’ are obviously not taxonomic, but persist as terms of convenience derived from older mycological literature. (https://apsjournals.apsnet.org/doi/10.1094/9780890545041.002)"   might be best not to try subdividing fungi.... to messy.
+
+Plant subdivision consistent with Ruggerio et al. 2015, follows Margulis and Schwartz 2001. 
+
+Protozoa subdivision-- took the two phyla with most subdivisions from GBIF, and all else in 'other protozoa'
+
+didn't try subdivision of Chromista-- too messy.

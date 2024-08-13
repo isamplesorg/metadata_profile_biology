@@ -40,11 +40,11 @@ def main(command, path):
 #    command = 'uijson'
     path = '../docs'
 # *******************
-    input1 = "material_sample_type|material_type|sampled_feature_type"
+    input1 = "biology_sampledfeature_extension"
     inputttl = input1.split('|')
 # inputttl is a list of skos rdf vocabulary filenames with Turtle serialization
 # vocab_source_dir is the path to the directory that contains the source files
-    input1 = "spec:specimentypevocabulary|mat:materialsvocabulary|sf:sampledfeaturevocabulary"
+    input1 = "bioe:biologicentityvocabulary"
     inputvocaburi = input1.split('|')
 # make sure have cache directory -- this is where the sqlAlchemy db will be
     cachepath = "../cache/vocabularies.db"
