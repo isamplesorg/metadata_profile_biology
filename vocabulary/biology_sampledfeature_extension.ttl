@@ -155,6 +155,7 @@ bioe:chromista
   skos:broader bioe:eukaryote ;
   skos:definition "Chromists are unified by a shared common ancestral body plan with (1) a skeleton comprising cortical alveoli with subpellicular microtubules and a microtubule bypassing band distinct from the three major microtubule centriolar roots inherited from excavate protozoa, and (2) chloroplasts of red algal origin inside the endomembrane system with unique membrane topology and derlin-based periplastid protein import machinery.  Chromists are distinguished from Plantae because of more complex chloroplast-associated membrane topology and rigid tubular multipartite ciliary hairs.  The kingdom includes highly divergent cytoskeletons and trophic modes. Chromista comprise eight distinctive phyla (Cavalier-Smith, 2018) and includes a majority of marine algae and of heterotrophic protists,  various human disease agents such as malaria parasites, and agricultural pathogens like potato blight and sugar beet rhizomania disease. They have a greater range of body plans and lifestyles than the entire plant kingdom and more phyla than kingdoms Fungi or Protozoa."@en ;
   skos:prefLabel "Chromista"@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
 .
 bioe:crustacea
   rdf:type skos:Concept ;
@@ -434,6 +435,7 @@ sf:biologicalentity
   rdf:type skos:Concept ;
   rdfs:label "Biological entity"@en ;
   skos:definition "Sampled feature is an organism. Use for samples that represent some species of organism as the proximate sampled feature for which the focus is not the environment that the organism inhabits."@en ;
+  skos:inScheme bioe:biologicentityvocabulary ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:note "Based on DiSSCo listing in table 2 of https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ/, draft DiSSCo specimen & collection classification (2023-03-27)"@en ;
   skos:prefLabel "Biological entity"@en ;

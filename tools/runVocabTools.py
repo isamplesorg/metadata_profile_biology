@@ -63,14 +63,25 @@ def main(command, path):
 
     # do function of original Makefile here
 
-    for inputf in inputttl:
-        result = load_cachedb(sourcevocabdir + "/" + inputf + ".ttl", cachepath)
-        if (result == 0):
-            print(f"load_cachedb call successful for: {inputf}")
-        else:
-            print(f"load_cachedb had problem processing: {inputf}")
+    # for inputf in inputttl:
+    #     result = load_cachedb(sourcevocabdir + "/" + inputf + ".ttl", cachepath)
+    #     if (result == 0):
+    #         print(f"load_cachedb call successful for: {inputf}")
+    #     else:
+    #         print(f"load_cachedb had problem processing: {inputf}")
 
+            # ***********************
+    index = 0
+    while index < len(inputttl):
+        # for inputf in inputttl:
+        result = load_cachedb(sourcevocabdir + "/" + inputttl[index] + ".ttl", inputvocaburi[index], cachepath)
+        if (result == 0):
+            print(f"load_cachedb call successful for: {inputttl[index]}")
+        else:
+            print(f"load_cachedb had problem processing: {inputttl[index]}")
+        index += 1
         # ***********************
+
 
     #  essfrole_earthenv_sampled_feature_role  spec_earthenv_specimen_type
     if command == "uijson":
@@ -95,10 +106,10 @@ def main(command, path):
 # def _run_make_in_container(target: str):
 #    subprocess.run(["/usr/bin/make", "-C", "/app", "-f", "/app/Makefile", target])
 
-def load_cachedb(inputf, cachepath):
+def load_cachedb(inputf, inputuri, cachepath):
     # tools/vocab.py --verbosity ERROR -s $(CACHE) load $(SRC)/$@
     print(f"cachdb file to load: {inputf}")
-    load_args = ["--verbosity", "ERROR", "-s", cachepath, "load", inputf]
+    load_args = ["--verbosity", "ERROR", "-s", cachepath, "load", inputf, inputuri]
     result = _run_python_in_container("vocab.py", load_args, f="")
     if (result == 0):
         print(f"vocab.py call successful for {inputf}")
