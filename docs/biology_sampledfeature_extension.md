@@ -17,13 +17,13 @@ execute:
 
 # **Concept scheme:** Biology Extension: Basic taxon classes for biological entity
 
-Vocabulary last modified:  2024-01-19
+Vocabulary last modified:  2024-04-12
 
 subtitle: 
   This is a vocabulary to categorize sampled organisms (whole or part) according to taxonomic classes. Classes are based largely on taxonomy found in Wikipedia, particularly Whittaker's five kingdom system (1969) (https://en.wikipedia.org/wiki/Kingdom_(biology), https://doi.org/10.1126%2Fscience.163.3863.150). The intended use is in iSamples cross domain categorization of material samples, recognizing that there are multiple view for taxonomy and cladistics for the tree of life. This is a high level view intended for cross domain purposes, not expert analysis. Other extension vocabularies should be used for other taxonomic schemes
 
 Namespace: 
-[`https://w3id.org/isample/biology/biosampledfeature/1.1/biologicentityvocabulary`](https://w3id.org/isample/biology/biosampledfeature/1.1/biologicentityvocabulary)
+[`https://w3id.org/isample/biology/biosampledfeature/biologicentityvocabulary`](https://w3id.org/isample/biology/biosampledfeature/biologicentityvocabulary)
 
 **History**
 
@@ -78,22 +78,18 @@ Namespace:
 []{#biologicalentity}
 
 ##  Biological entity
-
-
 - Sampled feature is an organism. Use for samples that represent some
 species of organism as the proximate sampled feature for which the
 focus is not the environment that the organism inhabits.
-- Concept URI token: biologicalentity
+- Concept URI: https://w3id.org/isample/vocabulary/sampledfeature/biologicalentity
 
 
 []{#eukaryote}
 
 ###  Eukaryote
 
-
 - Child of:
  [`biologicalentity`](#biologicalentity)
-
 - Organism whose cells have a nucleus. Includes all animals, plants,
 fungi, and many unicellular organisms
 (https://en.wikipedia.org/wiki/Eukaryote).   Eucaryote membranes are
@@ -110,17 +106,15 @@ table 7-2). Eukaryotes can be considered a chimera; a combination of
 archaeal and bacterial features that result in the cellular complexity
 and distinctive characteristics.
 (https://doi.org/10.1016/j.tim.2021.11.003).
-- Concept URI token: eukaryote
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/eukaryote
 
 
 []{#algae}
 
 ####  Algae
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - Informal term for a large and diverse group of photosynthetic
 eukaryotic organisms.  Included organisms range from unicellular
 microalgae, such as Chlorella, Prototheca and the diatoms, to
@@ -131,37 +125,32 @@ distinct cell and tissue types, such as stomata, xylem and phloem that
 are found in land plants.  Includes red algae (Rhodophycophyta), brown
 algae (Phaeophycophyta), and green algae (Chlorophyta).
 https://en.wikipedia.org/wiki/Algae
-- Concept URI token: algae
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/algae
 
 
 []{#animalia}
 
 ####  Animalia
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - Animals are distinguished from other eukaryotes based on several key
 characteristics, including: 1) animals are multicellular organisms 2)
 Animals are heterotrophic, they obtain their food by consuming other
 organisms or organic matter; 3) Animals lack cell walls; 4) Many
 animals have a nervous system; 5) Most animals reproduce sexually
 (Chat GPT)
-
 - See Also:
-* [<https://www.gbif.org/species/1>](https://www.gbif.org/species/1)
-- Concept URI token: animalia
+  * [<https://www.gbif.org/species/1>](https://www.gbif.org/species/1)
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/animalia
 
 
 []{#arthropod}
 
 #####  Arthropod
 
-
 - Child of:
  [`animalia`](#animalia)
-
 - invertebrate animals with an exoskeleton, a segmented body, and
 paired jointed appendages. Arthropods form the phylum Arthropoda. They
 are distinguished by their jointed limbs and cuticle made of chitin,
@@ -169,39 +158,33 @@ often mineralised with calcium carbonate. The arthropod body plan
 consists of segments, each with a pair of appendages. Arthropods are
 bilaterally symmetrical and their body possesses an external skeleton.
 (https://en.wikipedia.org/wiki/Arthropod)
-
 - See Also:
-* [<https://www.gbif.org/species/54>](https://www.gbif.org/species/54)
-- Concept URI token: arthropod
+  * [<https://www.gbif.org/species/54>](https://www.gbif.org/species/54)
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/arthropod
 
 
 []{#arachnid}
 
 ######  Arachnid
 
-
 - Child of:
  [`arthropod`](#arthropod)
-
 - a group of arthropods that share several key characteristics,
 including two main body segments, four pairs of legs, lack of
 antennae, simple eyes, and specialized feeding and defense structures
 called chelicerae (ChatGPT)
-
 - See Also:
-* [<https://en.wikipedia.org/wiki/Arachnid>](https://en.wikipedia.org/wiki/Arachnid)
-* [<https://www.gbif.org/species/367>](https://www.gbif.org/species/367)
-- Concept URI token: arachnid
+  * [<https://en.wikipedia.org/wiki/Arachnid>](https://en.wikipedia.org/wiki/Arachnid)
+  * [<https://www.gbif.org/species/367>](https://www.gbif.org/species/367)
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/arachnid
 
 
 []{#crustacea}
 
 ######  Crustaceans
 
-
 - Child of:
  [`arthropod`](#arthropod)
-
 - arthropod taxon which includes such animals as decapods, seed
 shrimp, branchiopods, fish lice, krill, remipedes, isopods, barnacles,
 copepods, amphipods and mantis shrimp.  crustaceans have an
@@ -210,17 +193,15 @@ other groups of arthropods, such as insects, myriapods and
 chelicerates, by the possession of biramous (two-parted) limbs, and by
 their larval forms, such as the nauplius stage of branchiopods and
 copepods. (https://en.wikipedia.org/wiki/Crustacean)
-- Concept URI token: crustacea
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/crustacea
 
 
 []{#hexapoda}
 
 ######  Insect
 
-
 - Child of:
  [`arthropod`](#arthropod)
-
 - Include all hexapoda here; Insects are a group of hexapod arthropods
 characterized by having three main body segments (head, thorax, and
 abdomen), six legs, and wings in many species. All other hexapod
@@ -229,201 +210,168 @@ insects, but they share the same body plan of three main body segments
 and six legs. However, they lack wings and other features that are
 unique to insects. Therefore, all insects are hexapods, but not all
 hexapods are insects. (ChatGPT)
-
 - See Also:
-* [<https://www.gbif.org/species/174780701>](https://www.gbif.org/species/174780701)
-
+  * [<https://www.gbif.org/species/174780701>](https://www.gbif.org/species/174780701)
 - **Alternate labels:**
 Hexapoda
-
-- Concept URI token: hexapoda
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/hexapoda
 
 
 []{#myriapod}
 
 ######  Myriapod
 
-
 - Child of:
  [`arthropod`](#arthropod)
-
 - Arthropods such as millipedes and centipedes.
 (https://en.wikipedia.org/wiki/Myriapoda). A group of arthropods that
 have long, segmented body with numerous pairs of legs, simple eyes,
 specialized mouthparts, and a primarily terrestrial habitat, which
 distinguishes them from other arthropod groups such as insects and
 crustaceans. (ChatGPT)
-- Concept URI token: myriapod
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/myriapod
 
 
 []{#otherarthropod}
 
 ######  Other arthropod
 
-
 - Child of:
  [`arthropod`](#arthropod)
-
 - includes Chelicerata (horseshoe crabs, scorpions, and sea spiders),
 Trilobitomorpha ( extinct trilobites), and  Pentastomida (parasitic
 arthropods that infect the respiratory systems of reptiles and
 mammals). (ChatGPT)
-- Concept URI token: otherarthropod
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/otherarthropod
 
 
 []{#mollusca}
 
 #####  Mollusca
 
-
 - Child of:
  [`animalia`](#animalia)
-
 - animals that have a soft body with a mantle, a radula (ribbon-like
 structure covered in tiny teeth that is used to scrape food), a
 muscular foot, an open circulatory system, and a visceral mass that
 contains the internal organs, including the digestive, excretory, and
 reproductive systems. (ChatGPT)
-
 - See Also:
-* [<https://www.gbif.org/species/52>](https://www.gbif.org/species/52)
-
+  * [<https://www.gbif.org/species/52>](https://www.gbif.org/species/52)
 - **Alternate labels:**
 bivalves, 
 cephalopods, 
 gastropods, 
-
-- Concept URI token: mollusca
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/mollusca
 
 
 []{#otherinvertebrate}
 
 #####  Other invertebrate
 
-
 - Child of:
  [`animalia`](#animalia)
-
 - Includes Cnidaria (jellyfish, coral, anemones), Echinodermata
 (starfish, sea urchins, sea cucumbers), Nematoda (roundworms),
 Platyhelminthes (flatworms), Annelida (segmented worms), Ctenophora
 (comb jellies), Brachiopoda (lamp shells), Bryozoa (moss animals),
 Chaetognatha (arrow worms), Hemichordata (acorn worms),
 Xenacoelomorpha (simple-bodied worms) (ChatGPT)
-- Concept URI token: otherinvertebrate
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/otherinvertebrate
 
 
 []{#porifera}
 
 #####  Porifera
 
-
 - Child of:
  [`animalia`](#animalia)
-
 - multicellular animals that have bodies full of pores and channels
 allowing water to circulate through them, consisting of jelly-like
 mesohyl sandwiched between two thin layers of cells.
 (https://en.wikipedia.org/wiki/Sponge)
-
 - See Also:
-* [<https://www.gbif.org/species/105>](https://www.gbif.org/species/105)
-
+  * [<https://www.gbif.org/species/105>](https://www.gbif.org/species/105)
 - **Alternate labels:**
 sponges
-
-- Concept URI token: porifera
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/porifera
 
 
 []{#vertebrate}
 
 #####  Vertebrate
 
-
 - Child of:
  [`animalia`](#animalia)
-
 - Animals that have a vertebral column, a cranium, an endoskeleton, a
 well-developed muscular system, and an advanced nervous system
 (ChatGPT);
-- Concept URI token: vertebrate
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/vertebrate
 
 
 []{#amphibian}
 
 ######  Amphibian
 
-
 - Child of:
  [`vertebrate`](#vertebrate)
-
 - Vertebrates that have a dual life cycle, semi-permeable skin,
 absence of scales and claws, a three-chambered heart, and dependence
 on water for reproduction and survival (ChatGPT)
-- Concept URI token: amphibian
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/amphibian
 
 
 []{#bird}
 
 ######  Bird
 
-
 - Child of:
  [`vertebrate`](#vertebrate)
-
 - Vertebrates that have feathers, lightweight, hollow bones, a beak,
 an efficient respiratory system, and are warm-blooded. (ChatGPT)
-- Concept URI token: bird
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/bird
 
 
 []{#fish}
 
 ######  Fish
 
-
 - Child of:
  [`vertebrate`](#vertebrate)
-
 - Vertebrates that have gills, scales, fins, are cold-blooded, and
 commonly have a swim bladder; includes jawless fish, cartilaginous
 fish and bony fish. (ChatGPT)
-- Concept URI token: fish
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/fish
 
 
 []{#mammal}
 
 ######  Mammal
 
-
 - Child of:
  [`vertebrate`](#vertebrate)
-
 - vertebrates that have mammary glands, hair or fur, three middle ear
 bones, specialized teeth, and are warm-blooded. (ChatGPT)
-- Concept URI token: mammal
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/mammal
 
 
 []{#reptile}
 
 ######  Reptile
 
-
 - Child of:
  [`vertebrate`](#vertebrate)
-
 - Vertebrates that have scaly skin and claws, amniotic eggs, are cold-
 blooded, and are ectothermic (ChatGPT)
-- Concept URI token: reptile
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/reptile
 
 
 []{#chromista}
 
 ####  Chromista
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - Chromists are unified by a shared common ancestral body plan with
 (1) a skeleton comprising cortical alveoli with subpellicular
 microtubules and a microtubule bypassing band distinct from the three
@@ -440,44 +388,34 @@ agents such as malaria parasites, and agricultural pathogens like
 potato blight and sugar beet rhizomania disease. They have a greater
 range of body plans and lifestyles than the entire plant kingdom and
 more phyla than kingdoms Fungi or Protozoa.
-
 - See Also:
-* [<https://www.gbif.org/species/4>](https://www.gbif.org/species/4)
-
+  * [<https://www.gbif.org/species/4>](https://www.gbif.org/species/4)
 - **Alternate labels:**
 KINGDOM CHROMISTA (Ruggerio et al., 2015)
-
-- Concept URI token: chromista
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/chromista
 
 
 []{#eukaryoticmicroorganism}
 
 ####  Eukaryotic microorganism
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - Unclassified Eukaryote single-cell organisms; might be microfungi,
 microalgae, Protista or Chromista.
-
 - See Also:
-* [<https://en.wikipedia.org/wiki/Protist>](https://en.wikipedia.org/wiki/Protist)
-
+  * [<https://en.wikipedia.org/wiki/Protist>](https://en.wikipedia.org/wiki/Protist)
 - **Alternate labels:**
 Protista
-
-- Concept URI token: eukaryoticmicroorganism
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/eukaryoticmicroorganism
 
 
 []{#fungi}
 
 ####  Fungi
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - eukaryotic organisms that contain chitin in their cell walls, are
 heterotrophs (they obtain their nutrients by absorbing organic
 material from their environment, either as decomposers, parasites, or
@@ -490,37 +428,32 @@ sexually and asexually. They are usually made up of filamentous,
 branched somatic structures which are typically surrounded by cell
 walls containing chitin or cellulose, or both of these substances.
 (https://plantlet.org/lower-fungi-higher-fungi/)
-
 - See Also:
-* [<https://www.gbif.org/species/5>](https://www.gbif.org/species/5)
-- Concept URI token: fungi
+  * [<https://www.gbif.org/species/5>](https://www.gbif.org/species/5)
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/fungi
 
 
 []{#macrofungi}
 
 #####  Macrofungi
 
-
 - Child of:
  [`fungi`](#fungi)
-
 - Macrofungi refers to all fungi that produce visible fruiting bodies.
 These fungi are evolutionarily and ecologically very divergent.
 Evolutionarily, they belong to two main phyla, Ascomycota and
 Basidiomycota, and many of them have relatives that cannot form
 visible fruiting
 bodies.(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6106070/)
-- Concept URI token: macrofungi
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/macrofungi
 
 
 []{#microfungi}
 
 #####  Microfungi
 
-
 - Child of:
  [`fungi`](#fungi)
-
 - Microfungi or micromycetes are fungi—eukaryotic organisms such as
 molds, mildews and rusts, which have microscopic spore-producing
 structures. They exhibit tube tip-growth and have cell walls composed
@@ -528,21 +461,17 @@ of chitin, a polymer of N-acetylglucosamine. Microfungi are a
 paraphyletic group, distinguished from macrofungi only by the absence
 of a large, multicellular fruiting body. Include moulds, yeasts.
 (https://en.wikipedia.org/wiki/Microfungi)
-
 - **Alternate labels:**
 micromycetes
-
-- Concept URI token: microfungi
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/microfungi
 
 
 []{#plantae}
 
 ####  Plantae
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - Plants are eukaryotes that have cell walls made of cellulose,
 specialized organelles called chloroplasts, which contain chlorophyll
 and other pigments that allow plants to perform photosynthesis and
@@ -555,106 +484,82 @@ spores, and most plants have specialized tissues called xylem and
 phloem, which transport water, nutrients, and other substances
 throughout the plant. (ChatGPT). Subdivision here follows Margulis and
 Schwartz 2001.
-
 - See Also:
-* [<https://www.gbif.org/species/6>](https://www.gbif.org/species/6)
-
+  * [<https://www.gbif.org/species/6>](https://www.gbif.org/species/6)
 - **Source:**
 Margulis L, Schwartz KV. Five kingdoms: an illustrated guide to the phyla of life on earth, third edition, New York, WH Freeman and Company, 2001.
-
-- Concept URI token: plantae
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/plantae
 
 
 []{#nonvascularplant}
 
 #####  Non-vascular plant
 
-
 - Child of:
  [`plantae`](#plantae)
-
 - Non-vascular plants that do not have specialized tissues for
 transporting water and nutrients;  includes mosses, Marchantiophyta
 (liverworts), and Anthocerotophyta (hornworts). (ChatGPT)
-
 - See Also:
-* [<https://www.gbif.org/species/35>](https://www.gbif.org/species/35)
-
+  * [<https://www.gbif.org/species/35>](https://www.gbif.org/species/35)
 - **Alternate labels:**
 Bryophyte
-
-- Concept URI token: nonvascularplant
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/nonvascularplant
 
 
 []{#otherplant}
 
 #####  Other plant
 
-
 - Child of:
  [`plantae`](#plantae)
-
 - plants that do not fit in other plant sub class. Includes
 Lycopodiophyta (clubmosses) and Equisetophyta (horsetails)
-- Concept URI token: otherplant
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/otherplant
 
 
 []{#vascularseedplant}
 
 #####  Vascular seed plant
 
-
 - Child of:
  [`plantae`](#plantae)
-
 - Plant that produces seeds, hence the alternative name seed plant.
 Spermatophytes are a subset of the embryophytes or land plants. They
 include most familiar types of plants, including all flowers and most
 trees, but exclude some other types of plants such as ferns, mosses,
 algae. (https://en.wikipedia.org/wiki/Spermatophyte). Includes
 Gymnosperms (naked-seed plants) and Angiosperms (flowering plants).
-
 - **Alternate labels:**
 spermatophyte
-
-
 - **Source:**
 https://en.wikipedia.org/wiki/Seed_plant
-
-- Concept URI token: vascularseedplant
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/vascularseedplant
 
 
 []{#vascularsportplant}
 
 #####  Vascular spore plant
 
-
 - Child of:
  [`plantae`](#plantae)
-
 - a vascular plant (with xylem and phloem) that disperses spores; they
 produce neither flowers nor seeds, Includes  Ferns, horsetails (often
 treated as ferns), and lycophytes (clubmosses, spikemosses, and
 quillworts)
-
 - **Alternate labels:**
 Pteridophyte
-
-
 - **Source:**
 https://en.wikipedia.org/wiki/Pteridophyte
-
-- Concept URI token: vascularsportplant
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/vascularsportplant
 
 
 []{#protozoa}
 
 ####  Protozoa
 
-
 - Child of:
  [`eukaryote`](#eukaryote)
-
 - A single-celled eukaryote, either free-living or parasitic, that
 feed on organic matter such as other microorganisms or organic tissues
 and debris (predominantly heterotrophic). Historically, protozoans
@@ -662,44 +567,36 @@ were regarded as 'one-celled animals', because they often possess
 animal-like behaviours, such as motility and predation, and lack a
 cell wall, as found in plants and many algae.
 (https://en.wikipedia.org/wiki/Protozoa)
-
 - See Also:
-* [<https://www.gbif.org/species/7>](https://www.gbif.org/species/7)
-
+  * [<https://www.gbif.org/species/7>](https://www.gbif.org/species/7)
 - **Alternate labels:**
 KINGDOM PROTOZOA (Ruggerio et al., 2015)
-
-- Concept URI token: protozoa
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/protozoa
 
 
 []{#amoebozoa}
 
 #####  Amoebozoa
 
-
 - Child of:
  [`protozoa`](#protozoa)
-
 - a diverse group of organisms that share certain characteristics,
 such as the ability to move using pseudopodia, temporary extensions of
 the cell membrane and cytoplasm that allow the cell to crawl or engulf
 food particles, the lack of rigid cell walls, presence of
 mitochondria, which are organelles that generate energy for the cell
 through cellular respiration (chatGPT)
-
 - See Also:
-* [<https://www.gbif.org/species/7509337>](https://www.gbif.org/species/7509337)
-- Concept URI token: amoebozoa
+  * [<https://www.gbif.org/species/7509337>](https://www.gbif.org/species/7509337)
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/amoebozoa
 
 
 []{#mycetozoa}
 
 #####  Mycetozoa
 
-
 - Child of:
  [`protozoa`](#protozoa)
-
 - Mycetozoa includes the slime molds, which are a group of organisms
 that have both amoeboid and fungal-like characteristics. The Mycetozoa
 can be further subdivided into two groups: the plasmodial slime molds
@@ -713,37 +610,30 @@ amorphous organisms visible with the naked eye and conspicuously
 shaped fruit bodies. Although they are monocellular, they can reach
 immense widths and weights.
 (https://en.wikipedia.org/wiki/Mycetozoa).  (ChatGPT)
-
 - See Also:
-* [<https://www.gbif.org/species/33>](https://www.gbif.org/species/33)
-
+  * [<https://www.gbif.org/species/33>](https://www.gbif.org/species/33)
 - **Alternate labels:**
 Myxomycota
-
-- Concept URI token: mycetozoa
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/mycetozoa
 
 
 []{#otherprotozoa}
 
 #####  Other Protozoa
 
-
 - Child of:
  [`protozoa`](#protozoa)
-
 - Protozoa is not Amoebozoa or Mycetozoa.  Includes phylum Euglenozoa
 and Microsporidia prominently among others.
-- Concept URI token: otherprotozoa
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/otherprotozoa
 
 
 []{#lichen}
 
 ###  Lichen
 
-
 - Child of:
  [`biologicalentity`](#biologicalentity)
-
 - A composite organism that arises from algae or cyanobacteria living
 among filaments of multiple fungi species in a mutualistic
 relationship. (https://en.wikipedia.org/wiki/Lichen). Lichens are not
@@ -752,17 +642,15 @@ association between a fungus and either an alga or a cyanobacterium.
 The fungal partner belongs to the kingdom Fungi, while the algal or
 cyanobacterial partner belongs to either the kingdom Plantae or the
 kingdom Bacteria, respectively. (ChatGPT)
-- Concept URI token: lichen
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/lichen
 
 
 []{#plasmid}
 
 ###  Plasmid
 
-
 - Child of:
  [`biologicalentity`](#biologicalentity)
-
 - A plasmid is a small, extrachromosomal DNA molecule within a cell
 that is physically separated from chromosomal DNA and can replicate
 independently. While chromosomes are large and contain all the
@@ -770,17 +658,15 @@ essential genetic information for living under normal conditions,
 plasmids are usually very small and contain only additional genes that
 may be useful in certain situations or conditions.
 (https://en.wikipedia.org/wiki/Plasmid)
-- Concept URI token: plasmid
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/plasmid
 
 
 []{#prokaryote}
 
 ###  Prokaryote
 
-
 - Child of:
  [`biologicalentity`](#biologicalentity)
-
 - single-celled organisms that lack a nucleus and other membrane-bound
 organelles. Unlike cells of animals and other eukaryotes, bacterial
 cells do not contain a nucleus and rarely harbour membrane-bound
@@ -791,22 +677,18 @@ independently from an ancient common ancestor. Almost all prokaryotes
 have a cell wall, a protective structure that allows them to survive
 in extreme conditions, which is located outside of their plasma
 membrane. Archaea and bacteria cannot reproduce sexually.
-
 - **Alternate labels:**
 Monera, 
 SUPERKINGDOM PROKARYOTA (Ruggerio et al, 2015), 
-
-- Concept URI token: prokaryote
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/prokaryote
 
 
 []{#archaea}
 
 ####  Archaea
 
-
 - Child of:
  [`prokaryote`](#prokaryote)
-
 - archaeal cell walls are composed of polysaccharides (sugars). they
 never have peptidoglycan in their cell walls, their cell membranes
 contain lipids of unique composition (glycerol molecules are mirror
@@ -821,25 +703,20 @@ by a largely proteinaceous coat; (3) the occurrence of ether linked
 lipids built from phytanyl chains and (4) in all cases known so far,
 their occurrence only in unusual habitats.
 (https://pubmed.ncbi.nlm.nih.gov/691075/)
-
 - See Also:
-* [<https://www.gbif.org/species/2>](https://www.gbif.org/species/2)
-
+  * [<https://www.gbif.org/species/2>](https://www.gbif.org/species/2)
 - **Alternate labels:**
 Archaebacteria, 
 KINGDOM ARCHAEA (Ruggerio et al. 2015), 
-
-- Concept URI token: archaea
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/archaea
 
 
 []{#bacteria}
 
 ####  Bacteria
 
-
 - Child of:
  [`prokaryote`](#prokaryote)
-
 - a large domain of prokaryotic microorganisms. Bacterial cells do not
 contain a nucleus and rarely harbour membrane-bound organelles.  The
 bacterial cell is surrounded by a cell membrane, which is made
@@ -849,58 +726,48 @@ essential components of the cytoplasm within the cell.  Bacterial cell
 walls are composed of peptidoglycan, a complex of protein and sugars,
 while archaeal cell walls are composed of polysaccharides (sugars).
 (https://en.wikipedia.org/wiki/Bacteria)
-
 - See Also:
-* [<https://www.gbif.org/species/3>](https://www.gbif.org/species/3)
-
+  * [<https://www.gbif.org/species/3>](https://www.gbif.org/species/3)
 - **Alternate labels:**
 Eubacteria, 
 KINGDOM BACTERIA (Ruggerio et al., 2015), 
-
-- Concept URI token: bacteria
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/bacteria
 
 
 []{#virus}
 
 ###  Virus
 
-
 - Child of:
  [`biologicalentity`](#biologicalentity)
-
 - A virus is a submicroscopic infectious agent that replicates only
 inside the living cells of an organism. Realms are Adnaviria,
 Duplodnaviria, Monodnaviria, Riboviria, Ribozyviria, Varidnaviria
 (https://en.wikipedia.org/wiki/Virus). Viruses are not cells at all,
 so they are neither prokaryotes nor eukaryotes. (https://bio.libretext
 s.org/Bookshelves/Introductory_and_General_Biology/Book)
-
 - See Also:
-* [<https://www.gbif.org/species/8>](https://www.gbif.org/species/8)
-- Concept URI token: virus
+  * [<https://www.gbif.org/species/8>](https://www.gbif.org/species/8)
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/virus
 
 
 []{#othervirus}
 
 ####  Other Virus
 
-
 - Child of:
  [`virus`](#virus)
-
 - Virus that is not a member of order Caudovirales (e.g.,
 bacteriophage T4, lambda phage).
-- Concept URI token: othervirus
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/othervirus
 
 
 []{#phage}
 
 ####  Phage
 
-
 - Child of:
  [`virus`](#virus)
-
 - A bacteriophage, also known informally as a phage, is a
 duplodnaviria virus that infects and replicates within bacteria and
 archaea. Bacteriophages are composed of proteins that encapsulate a
@@ -910,11 +777,9 @@ and as many as hundreds of genes. Phages replicate within the
 bacterium following the injection of their genome into its cytoplasm.
 (https://en.wikipedia.org/wiki/Bacteriophage).  Includes all virus in
 order Caudovirales (e.g., bacteriophage T4, lambda phage).
-
 - **Alternate labels:**
 bacteriophage
-
-- Concept URI token: phage
+- Concept URI: https://w3id.org/isample/biology/biosampledfeature/phage
 
 
 

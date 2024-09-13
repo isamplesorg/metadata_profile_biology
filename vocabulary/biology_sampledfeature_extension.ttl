@@ -1,13 +1,13 @@
-# baseURI: https://w3id.org/isample/biology/biosampledfeature/1.1/biologicentityvocabulary
+# baseURI: https://w3id.org/isample/biology/biosampledfeature/biologicentityvocabulary
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix bioe: <https://w3id.org/isample/biology/biosampledfeature/1.1/> .
+@prefix bioe: <https://w3id.org/isample/biology/biosampledfeature/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
-@prefix sf: <https://w3id.org/isample/vocabulary/sampledfeature/1.0/> .
+@prefix sf: <https://w3id.org/isample/vocabulary/sampledfeature/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
