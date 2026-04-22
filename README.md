@@ -1,16 +1,15 @@
 # Vocabulary extensions for Biological material samples.
 
 ## Vocabulary documents
-This repository hosts the one extension vocabularys for use with iSamples metadata describing biological taxa as the sampled feature for Biological material samples. The authoritative source files are rdf SKOS vocabularies serialized using Turtle syntax. These are in the **vocabulary** folder. The **docs** folder contains Markdown and HTML presentations of the vocabulary content. 
+This repository hosts one extension vocabulary for use with iSamples metadata describing biological taxa as the sampled feature for biological material samples. The authoritative source file is an RDF SKOS vocabulary serialized using Turtle syntax, located in the **vocabulary** folder. The **docs** folder contains Markdown and HTML presentations of the vocabulary content.
 
-### What's here:
-HTML representations of draft vocabularies for extending sampled feature for biologic samples with biological taxa.
+### Rendered documentation
+The rendered vocabulary page is published at:
+**<http://isamples.org/metadata_profile_biology/>** (also reachable via `https://isamplesorg.github.io/metadata_profile_biology/`, which 301-redirects there). The landing page is generated from [`docs/readme.md`](docs/readme.md).
 
-[HTML web page version](https://isamplesorg.github.io/metadata_profile_biology/biology_sampledfeature_extension.html) 
-
-[ARDC Research Vocabularies Australia (RVA) vocabulary service landing page](https://vocabs.ardc.edu.au/viewById/672)
-
-[RDF source file](https://raw.githubusercontent.com/isamplesorg/metadata_profile_biology/main/vocabulary/biology_sampledfeature_extension.ttl). This is the authoritative representation. 
+| Vocabulary | Source `.ttl` | Concept scheme CURIE | Rendered HTML | External registry |
+|---|---|---|---|---|
+| Biology sampled-feature extension (basic taxon classes) | [`biology_sampledfeature_extension.ttl`](vocabulary/biology_sampledfeature_extension.ttl) | `bioe:biologicentityvocabulary` | [HTML](http://isamples.org/metadata_profile_biology/biology_sampledfeature_extension.html) | [ARDC RVA](https://vocabs.ardc.edu.au/viewById/672) |
 
 ##  Vocabulary presentation template
 This repository hosts python code and github actions support maintenance and presentation of vocabularies represented using the SKOS RDF vocabulary, serialized using Turtle. It includes a github action configuration that will update files representing the vocabulary in Markdown and HTML format. The SKOS representation of the vocabularies in the Vocabulary folder are considered the canonical versions; changes to the vocabulary should be made in the SKOS files; updates (pushes) to the vocabulary will trigger a Github action update the Markdown and HTML representations. The HTML representation is published via Github pages from the content in the docs folder.

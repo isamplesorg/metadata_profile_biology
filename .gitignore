@@ -1,5 +1,9 @@
 .idea/
+.claude/
+.venv/
 
+tools/navocab/__pycache__/
 tools/navocab/__pycache__/__init__.cpython-311.pyc
 .idea/workspace.xml
 .idea/*.*
+/testoutput/local_run/
