@@ -35,8 +35,6 @@ import logging.config
 import navocab  # this is a local python package with routines for
                 # for interacting with skos rdf in an sqlAlchemy database
 
-
-
 logging_config = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -75,9 +73,6 @@ LOG_LEVELS = {
     "CRITICAL": logging.CRITICAL,
 }
 
-def getLogger():
-    return logging.getLogger("voc2md")
-
 
 
 NS = {
@@ -86,8 +81,7 @@ NS = {
     "owl": "http://www.w3.org/2002/07/owl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "obo": "http://purl.obolibrary.org/obo/",
-    "dcterm": "http://purl.org/dc/terms/",
-    "bioe":"https://w3id.org/isample/biology/biosampledfeature/"
+    "dcterm": "http://purl.org/dc/terms/"
 }
 
 PFX = """
@@ -95,11 +89,14 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX bioe: <https://w3id.org/isample/biology/biosampledfeature/> 
 """
 
 INDENT = "  "
+verbosity = "INFO"
+#control print errors; these will appear in the output markdown file.
 
+def getLogger():
+    return logging.getLogger("vocab2mdCacheV2")
 
 def skosT(term):
     return rdflib.URIRef(f"{NS['skos']}{term}")
@@ -135,6 +132,13 @@ def getVocabRoot(g, v):
     Accepts both concept->scheme (``skos:topConceptOf``) and
     scheme->concept (``skos:hasTopConcept``) assertions, since SKOS
     vocabularies in the wild use either (or both).
+
+    If neither assertion appears, falls back to every concept in the
+    scheme treated as a flat root. The fallback honors both direct
+    ``rdf:type skos:Concept`` and subclass typings (``rdf:type ?C`` where
+    ``?C rdfs:subClassOf skos:Concept``) — the latter is needed for
+    vocabularies like MMISW whose items are typed with a bespoke class
+    that declares ``rdfs:subClassOf skos:Concept``.
     """
     q = PFX + """SELECT DISTINCT ?s WHERE {
         { ?s skos:topConceptOf ?vocabulary . }
@@ -142,10 +146,21 @@ def getVocabRoot(g, v):
         { ?vocabulary skos:hasTopConcept ?s . }
     }"""
     qres = g.query(q, initBindings={'vocabulary': v})
-    res = []
-    for row in qres:
-        res.append(row[0])
-    return res
+    res = [row[0] for row in qres]
+    if res:
+        return res
+
+    q = PFX + """SELECT DISTINCT ?s WHERE {
+        ?s skos:inScheme ?vocabulary .
+        {
+            ?s rdf:type skos:Concept .
+        } UNION {
+            ?s rdf:type ?cls .
+            ?cls rdfs:subClassOf skos:Concept .
+        }
+    }"""
+    qres = g.query(q, initBindings={'vocabulary': v})
+    return [row[0] for row in qres]
 
 def getNarrower(g, v, r):
     """Return concepts that are skos:broader of r.
@@ -178,11 +193,9 @@ def getObjects(g, s, p):
     WHERE {
         ?subject ?predicate ?o .
     }""")
-
     L.debug(f"getObject prefixes: {PFX}\n")
-    L.debug(f"getObject expand subject: {s.toPython()}\n")
-    L.debug(f"getObject expand predicate: {p.toPython()}\n")
-    # g.expand_curie(s)
+    L.debug(f"getObject subject: {s}\n")
+    L.debug(f"getObject predicate: {p}\n")
     qres = g.query(q, initBindings={'subject': s, 'predicate': p})
     L.debug(f"length of qres: {len(qres)}\n", )
     L.debug(f"qres: {qres}\n")
@@ -249,7 +262,7 @@ def describeTerm(g, t, depth=0, level=1):
 
     broader = getObjects(g, t, skosT('broader'))
     if len(broader) > 0:
-        res.append("")
+#        res.append("")
         res.append(f"- Child of:")
         for b in broader:
             bt = b.split('/')[-1]
@@ -270,7 +283,7 @@ def describeTerm(g, t, depth=0, level=1):
         res += lines
     seealsos = getObjects(g, t, rdfsT('seeAlso'))
     if len(seealsos) > 0:
-#        res.append("")
+#       res.append("")
         res.append(f"- See Also:")
         for seealso in seealsos:
             res.append(f"  * [{seealso.n3(g.namespace_manager)}]({seealso})")
@@ -285,7 +298,7 @@ def describeTerm(g, t, depth=0, level=1):
         res.append(f"- **Alternate labels:**")
         for altlabel in altlabels:
             res.append(f"{altlabel}{delimiter}")
-#        res.append("")
+ #       res.append("")
 
     sources = []
     for source in getObjects(g, t, dctT('source')):
@@ -298,7 +311,7 @@ def describeTerm(g, t, depth=0, level=1):
         res.append(f"- **Source:**")
         for source in sources:
             res.append(f"{source}{delimiter}")
-#        res.append("")
+ #       res.append("")
 
     res.append(f"- Concept URI: {t}")
     res.append("")
@@ -425,7 +438,9 @@ def main(source, vocabulary):
     # res = []
     # res.append(conceptschemelist(vgraph))
 
-    verbosity = "DEBUG".upper()
+    # logging verbosity is set with global varable , at top
+    # when run github action, log statements are in the github action log.
+    # verbosity = "DEBUG".upper()
     logging_config["loggers"][""]["level"] = verbosity
     logging.config.dictConfig(logging_config)
     L = getLogger()
@@ -434,14 +449,8 @@ def main(source, vocabulary):
     store = navocab.VocabularyStore(storage_uri=source)
     res = []
 
-    L.debug(f"vocab2md source: {source}")
-    L.debug(f"vocab2md vocabulary: {vocabulary}")
-
-    test = store._g.namespace_manager.expand_curie(vocabulary)
-    L.debug(f"Test: {test}")
-
     vocabulary = store.expand_name(vocabulary)
-    L.debug(f"main: call describeVocabulary for: {vocabulary}")
+    L.debug(f"main: call desribeVocabulary for: {vocabulary}")
     theMarkdown = describeVocabulary(store._g, vocabulary)
     res.append(theMarkdown)
     # send the result to stdout via print.
