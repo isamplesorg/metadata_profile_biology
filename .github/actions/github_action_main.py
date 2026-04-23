@@ -18,185 +18,133 @@ import logging
 import os
 import subprocess
 import sys
-import logging.config
-
-logging_config = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "standard": {
-            "format": "%(asctime)s %(name)s:%(levelname)s: %(message)s",
-            "dateformat": "%Y-%m-%dT%H:%M:%S",
-        },
-    },
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-            "level": "INFO",
-            "formatter": "standard",
-            "stream": "ext://sys.stderr",
-        },
-    },
-    "loggers": {
-        "": {
-            "handlers": [
-                "console",
-            ],
-            "level": "INFO",
-            "propogate": False,
-        },
-    },
-}
-
-LOG_LEVELS = {
-    "DEBUG": logging.DEBUG,
-    "INFO": logging.INFO,
-    "WARNING": logging.WARNING,
-    "WARN": logging.WARNING,
-    "ERROR": logging.ERROR,
-    "FATAL": logging.CRITICAL,
-    "CRITICAL": logging.CRITICAL,
-}
-
-def getLogger():
-    return logging.getLogger("action_main")
 
 
 def main():
-    verbosity = "DEBUG".upper()
-    logging_config["loggers"][""]["level"] = verbosity
-    logging.config.dictConfig(logging_config)
-    L = getLogger()
-
     command = os.environ["INPUT_ACTION"]
-    L.debug(f"github_action_main: INPUT_ACTION: {command}")
+    print("github_action_main: INPUT_ACTION: ", command)
     path = os.environ["INPUT_PATH"]
     path = os.path.join(path, "docs")
     input = os.environ["INPUT_INPUTTTL"]
-    L.debug(f"inputttl string: {input}")
+    print(f"inputttl string: {input}")
     inputttl = input.split('|')
     for filename in inputttl:
         print(f"files to load: {filename}")
 
     input = os.environ["INPUT_INPUTVOCABURI"]
-    L.debug(f"inputvocaburi string: {input}")
+    print(f"inputvocaburi string: {input}")
     inputvocaburi = input.split('|')
     for auri in inputvocaburi:
         print(f"vocab URIs: {auri}")
 
     if len(inputttl) != len(inputvocaburi):
-        L.error(f"inputttl ({len(inputttl)}) and inputvocaburi ({len(inputvocaburi)}) counts do not match. Exiting.")
+        print(f"inputttl ({len(inputttl)}) and inputvocaburi ({len(inputvocaburi)}) counts do not match. Exiting.")
         sys.exit(-1)
 
     cachepath = "cache/vocabularies.db"
-    sourcevocabdir = "vocabulary"
+    sourcevocabdir = os.environ.get("INPUT_VOCABDIR") or "vocabulary"
+    print(f"github_action_main: source vocab directory: {sourcevocabdir}")
 
-    L.debug(f"github_action_main: target path for output: {path}")
+    print("github_action_main: target path for output: ", path)
     if path is None:
-        L.debug("Did not receive a valid path argument so we cannot run.")
+        print("Did not receive a valid path argument so we cannot run.")
         sys.exit(-1)
     if not os.path.exists(path):
         os.makedirs(path)
         os.chmod(path, 777)
-        L.debug(f"Created {path} since it didn't exist.")
+        print(f"Created {path} since it didn't exist.")
 
     # Process each vocabulary independently with a fresh cache DB so data from
     # previously-loaded vocabularies cannot pollute queries for the current one.
     for index, inputf in enumerate(inputttl):
         voc_uri = inputvocaburi[index]
-        L.info(f"=== Processing {inputf} ({voc_uri}) ===")
+        print(f"\n=== Processing {inputf} ({voc_uri}) ===")
 
         _reset_cache_db(cachepath)
 
         ttl_path = os.path.join(sourcevocabdir, inputf + ".ttl")
         if load_cachedb(ttl_path, cachepath, voc_uri) != 0:
-            L.warning(f"load_cachedb had problem processing: {inputf}, {voc_uri}; skipping")
+            print(f"load_cachedb had problem processing: {inputf}, {voc_uri}; skipping")
             continue
-        L.debug(f"load_cachedb call successful for: {inputf}, {voc_uri}")
+        print(f"load_cachedb call successful for: {inputf}, {voc_uri}")
 
         if command == "uijson":
-            L.debug("Generating uijson for inclusion in webUI build")
-            _run_uijson_in_container(os.path.join(path, inputf + ".json"), voc_uri)
+            print("Generating uijson for inclusion in webUI build")
+            _run_uijson_in_container(os.path.join(path, inputf + ".json"), voc_uri, cachepath)
         elif command == "docs":
-            L.debug("Generating markdown and html docs")
+            print("Generating markdown and html docs")
             md_path = os.path.join(path, inputf + ".md")
-            result = _run_docs_in_container(md_path, voc_uri)
+            result = _run_docs_in_container(md_path, voc_uri, cachepath)
             if result == 0:
                 _quarto_render_html(md_path, path)
             else:
-                L.debug(f"problem with {inputf}, don't call quarto")
+                print(f"problem with {inputf}, don't call quarto")
         else:
-            L.debug(f"Unknown command {command}.  Exiting.")
+            print(f"Unknown command {command}.  Exiting.")
             sys.exit(-1)
 
 
 def _reset_cache_db(cachepath: str):
     """Delete any prior cache DB file so each vocab starts from a clean store.
 
-    navocab's internal purge path is unreliable, so we remove the file here
-    before re-creating it via vocab.py load.
+    navocab's internal purge path is unreliable (see known issues), so we
+    remove the file here before re-creating it via vocab.py load.
     """
-    L = getLogger()
     cachedir = os.path.dirname(cachepath)
     if cachedir and not os.path.exists(cachedir):
         os.makedirs(cachedir)
     if os.path.exists(cachepath):
         try:
             os.remove(cachepath)
-            L.debug(f"Removed stale cache DB: {cachepath}")
+            print(f"Removed stale cache DB: {cachepath}")
         except OSError as e:
-            L.warning(f"Could not remove {cachepath}: {e}")
+            print(f"Could not remove {cachepath}: {e}")
 
 
 def load_cachedb(inputf, cachepath, voc_uri):
-    L = getLogger()
-    L.debug(f"cachdb file to load: {inputf}")
+    print(f"cachdb file to load: {inputf}")
     load_args = ["--verbosity", "DEBUG", "-s", cachepath, "load", inputf, voc_uri]
     result = _run_python_in_container("/app/tools/vocab.py", load_args, f="")
     if result == 0:
-        L.debug(f"vocab.py.load call successful for {inputf}")
+        print(f"vocab.py.load call successful for {inputf}")
         return 0
-    L.debug(f"vocab.py.load had problem processing {inputf}")
+    print(f"vocab.py.load had problem processing {inputf}")
     return 1
 
 
 def _quarto_render_html(markdown_in: str, output_path: str):
-    L = getLogger()
     result = subprocess.run(["/opt/quarto/bin/quarto", "render", markdown_in, "-t", "html"])
     if result.returncode == 0:
-        L.debug(f"Quarto call successful for {markdown_in}")
+        print(f"Quarto call successful for {markdown_in}")
         return 0
-    L.debug(f"Quarto had problem processing {markdown_in}")
+    print(f"Quarto had problem processing {markdown_in}")
     return 1
 
 
 def _run_make_in_container(target: str):
-    L = getLogger()
-    L.debug(f"In githubActionMain: make in container, target: {target}")
+    print("In githubActionMain: make in container, target: ", target)
     subprocess.run(["/usr/bin/make", "-C", "/app", "-f", "/app/Makefile", target])
 
 
-def _run_uijson_in_container(output_path: str, vocab_location: str):
-    L = getLogger()
+def _run_uijson_in_container(output_path: str, vocab_location: str, cachepath: str):
     with open(output_path, "w") as f:
-        vocab_args = ["-s", "/app/cache/vocabularies.db", "uijson", vocab_location, "-e"]
+        vocab_args = ["-s", cachepath, "uijson", vocab_location, "-e"]
         testflag = _run_python_in_container("/app/tools/vocab.py", vocab_args, f)
         if testflag == 0:
-            L.debug(f"Run_uijson: Successfully wrote uijson file to {output_path}")
+            print(f"Run_uijson: Successfully wrote uijson file to {output_path}")
             return 0
-        L.debug(f"problem processing {vocab_location}")
+        print(f"problem processing {vocab_location}")
         return 1
 
 
-def _run_docs_in_container(output_path: str, vocab_location: str):
-    L = getLogger()
+def _run_docs_in_container(output_path: str, vocab_location: str, cachepath: str):
     with open(output_path, "w") as f:
-        docs_args = ["/app/cache/vocabularies.db", vocab_location]
+        docs_args = [cachepath, vocab_location]
         testflag = _run_python_in_container("/app/tools/vocab2mdCacheV2.py", docs_args, f)
         if testflag == 0:
-            L.debug(f"Docs in container: Successfully wrote doc file {vocab_location} to {output_path}")
+            print(f"Docs in container: Successfully wrote doc file {vocab_location} to {output_path}")
             return 0
-        L.debug(f"vocab2mdCacheV2. problem processing {vocab_location}")
+        print(f"vocab2mdCacheV2. problem processing {vocab_location}")
         return 1
 
 
